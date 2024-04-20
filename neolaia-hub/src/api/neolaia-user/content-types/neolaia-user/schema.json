@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "neolaia_users",
+  "info": {
+    "singularName": "neolaia-user",
+    "pluralName": "neolaia-users",
+    "displayName": "neolaia-user",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "OTP": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "research_info_survey": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::research-info-survey.research-info-survey",
+      "inversedBy": "neolaia_user"
+    }
+  }
+}
