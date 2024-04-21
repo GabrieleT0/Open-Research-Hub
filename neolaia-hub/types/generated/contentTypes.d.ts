@@ -825,11 +825,6 @@ export interface ApiNeolaiaUserNeolaiaUser extends Schema.CollectionType {
   attributes: {
     OTP: Attribute.Text;
     email: Attribute.Email;
-    research_info_survey: Attribute.Relation<
-      'api::neolaia-user.neolaia-user',
-      'oneToOne',
-      'api::research-info-survey.research-info-survey'
-    >;
     otp_active: Attribute.Boolean;
     otp_generation_timestamp: Attribute.Text;
     first_access: Attribute.Boolean;
@@ -863,15 +858,11 @@ export interface ApiResearchInfoSurveyResearchInfoSurvey
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    Surname: Attribute.String;
-    Keyword: Attribute.String;
-    FormSchema: Attribute.BigInteger;
-    neolaia_user: Attribute.Relation<
-      'api::research-info-survey.research-info-survey',
-      'oneToOne',
-      'api::neolaia-user.neolaia-user'
-    >;
+    name: Attribute.String;
+    surname: Attribute.String;
+    keyword: Attribute.String;
+    form_schema: Attribute.BigInteger;
+    user_id: Attribute.BigInteger & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

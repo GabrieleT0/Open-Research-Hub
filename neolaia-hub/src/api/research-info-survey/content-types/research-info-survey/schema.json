@@ -12,23 +12,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Surname": {
+    "surname": {
       "type": "string"
     },
-    "Keyword": {
+    "keyword": {
       "type": "string"
     },
-    "FormSchema": {
+    "form_schema": {
       "type": "biginteger"
     },
-    "neolaia_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::neolaia-user.neolaia-user",
-      "mappedBy": "research_info_survey"
+    "user_id": {
+      "type": "biginteger",
+      "unique": true
     }
   }
 }

@@ -18,12 +18,6 @@
     "email": {
       "type": "email"
     },
-    "research_info_survey": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::research-info-survey.research-info-survey",
-      "inversedBy": "neolaia_user"
-    },
     "otp_active": {
       "type": "boolean"
     },
