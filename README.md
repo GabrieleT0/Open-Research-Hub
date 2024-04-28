@@ -7,6 +7,7 @@
 - VSCode (with Database client extension to see data in the DB)
 
 ## Installation
+### Back-end
 1. Clone this repository:
 ```
 git clone https://github.com/isislab-unisa/NEOLAiA-hub.git
@@ -29,10 +30,20 @@ npm install
 ```
 6. Create the .env file and complete with all field (see .env.example)
 
-7. Create DB and admin user:
-
-
 7. Run strapi from the neolaia-hub directory:
 ```
 npm run develop
+```
+
+---
+
+### Front-end
+1. Move to the front-end directory (./front-end/neolaia-hub)
+2. Run 
+```
+npm install
+```
+3. Start the front-end with
+```
+npm start
 ```
