@@ -17,7 +17,7 @@ const Auth = () => {
             const response = await axios.post(`${base_url}neolaia-usr/create`,{
                 email,
             });
-            //setEmail(response.data.email)
+            setEmail(response.data.email)
         } catch (error){
             console.error("Authentication failed:", error)
             setToken(null);
