@@ -12,9 +12,10 @@ const EmailForm = ( {onNext} ) => {
     };
 
     return (
-        <form onSubmit={handle_submit}>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <button type="submit">Send me the OTP</button>
+        <form onSubmit={handle_submit} id='email-form'>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Insert your email' id='input-mail'/>
+            <br></br>
+            <button type="submit" id='send-otp-btn'>Send me the OTP</button>
       </form>
     )
 }

@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+
+#email-form {
+text-align: center;
+margin-top: 50px;
+}
+
+#input-mail{
+  appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #5389f7;
+	background: rgba(#5389f7, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #5389f7;
+  font-size: 18px;
+}
+
+#otp-form {
+  text-align: center;
+  margin-top: 50px;
+  }
+
+#send-otp-btn{
+  margin-top: 15px;
+  appearance: none;
+	border: .2em solid #5389f7;
+	background: white;
+	padding: .85em 1.5em;
+	color: #5389f7;
+	border-radius: 2em;
+	transition: 0.5s;
+  cursor:pointer;
+  font-size: 13px;
+  font-weight: bold;
+	&:hover, &:focus, &:active {
+		background: #5389f7;
+		color: #fff;
+  }
+}
+
+#login-btn{
+  margin-top: 15px;
+  appearance: none;
+	border: .2em solid #5389f7;
+	background: white;
+	padding: .85em 1.5em;
+	color: #5389f7;
+	border-radius: 2em;
+	transition: 0.5s;
+  cursor:pointer;
+  font-size: 13px;
+  font-weight: bold;
+	&:hover, &:focus, &:active {
+		background: #5389f7;
+		color: #fff;
+  }
+}
+
+#input-otp{
+  appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #5389f7;
+	background: rgba(#5389f7, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #5389f7;
+  font-size: 18px;
+}
