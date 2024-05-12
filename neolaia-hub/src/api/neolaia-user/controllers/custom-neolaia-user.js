@@ -5,6 +5,9 @@ module.exports = {
         try{
             const otp = randomBytes(24 / 2).toString("hex");
             const email = ctx.request.body.email
+            const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it)\b/;
+            if(!regex.test(email))
+                return ctx.badRequest("The page address must come from one of NEOLAiA's partner university domains", {email : "The page address must come from one of NEOLAiA's partner university domains"})
             const currentTimeStamp = new Date().getTime().toString();
             let entry;
             entry = await strapi.db.query('api::neolaia-user.neolaia-user').findOne({
@@ -55,7 +58,7 @@ module.exports = {
             if (entry){
                 entry = await strapi.entityService.update("api::neolaia-user.neolaia-user", entry.id,{
                     data:{
-                        first_access: true,
+                        first_access: true, //in this way I can delete email from db that haven't done the first access
                         otp_active: false
                     }
                 })
