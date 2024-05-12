@@ -1,0 +1,28 @@
+{
+    "pages": [
+     {
+      "name": "page1",
+      "elements": [
+       {
+        "type": "paneldynamic",
+        "name": "free_keywords",
+        "title": "Enter a maximum of three free keywords for your Research area",
+        "templateElements": [
+         {
+          "type": "text",
+          "name": "free_keyword",
+          "title": "Free keyword",
+          "choicesByUrl": {
+            "url": "http://localhost:1337/api/research-info-surveys/search_keywords/",
+            "valueName": "display_value"
+            }   
+         }
+        ],
+        "panelCount": 1,
+        "minPanelCount": 1,
+        "maxPanelCount": 3
+       }
+      ]
+     }
+    ]
+   }

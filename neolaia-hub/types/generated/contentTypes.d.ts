@@ -860,9 +860,11 @@ export interface ApiResearchInfoSurveyResearchInfoSurvey
   attributes: {
     name: Attribute.String;
     surname: Attribute.String;
-    keyword: Attribute.String;
+    free_keyword_1: Attribute.String;
     form_schema: Attribute.BigInteger;
     user_id: Attribute.BigInteger & Attribute.Unique;
+    free_keyword_2: Attribute.String;
+    free_keyword_3: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

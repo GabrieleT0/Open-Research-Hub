@@ -18,7 +18,7 @@
     "surname": {
       "type": "string"
     },
-    "keyword": {
+    "free_keyword_1": {
       "type": "string"
     },
     "form_schema": {
@@ -27,6 +27,12 @@
     "user_id": {
       "type": "biginteger",
       "unique": true
+    },
+    "free_keyword_2": {
+      "type": "string"
+    },
+    "free_keyword_3": {
+      "type": "string"
     }
   }
 }
