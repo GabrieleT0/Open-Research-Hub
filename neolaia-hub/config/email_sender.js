@@ -5,8 +5,7 @@ module.exports = {
             const transporter = nodemailer.createTransport({
                 host: process.env.HOST_MAIL,
                 port: 587,
-                secureConnection: false,
-                tls: { ciphers: 'SSLv3' },
+                secure: false,
                 auth:{
                     user: process.env.USER_MAIL,
                     pass: process.env.PASS_MAIL,
