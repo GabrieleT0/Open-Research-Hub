@@ -5,13 +5,13 @@
       "elements": [
        {
         "type": "text",
-        "name": "Name",
+        "name": "name",
         "title": "Name",
         "isRequired": true
        },
        {
         "type": "text",
-        "name": "Surname",
+        "name": "surname",
         "title": "Surname",
         "isRequired": true
        },

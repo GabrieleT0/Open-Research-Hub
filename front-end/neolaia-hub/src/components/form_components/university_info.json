@@ -1,0 +1,187 @@
+{
+    "pages": [
+     {
+      "name": "university_info",
+      "elements": [
+       {
+        "type": "dropdown",
+        "name": "university_name",
+        "title": "Select your University",
+        "choices": [
+         "University of Salerno",
+         "University of Örebro",
+         "Šiauliai State University of Applied Sciences",
+         "University of Nicosia",
+         "Ştefan cel Mare University of Suceava",
+         "University of Tours",
+         "University of Bielefeld",
+         "University of Jaén",
+         "University of Ostrava"
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "University of Salerno",
+        "visibleIf": "{university_name} = 'University of Salerno'",
+        "title": "Select you Department",
+        "choices": [
+         "Department of Chemistry and Biology \"Adolfo Zambelli\"/DCB",
+         {
+          "value": "Department of Pharmacy/DIFARMA",
+          "text": "Department of Physics \"E.R.Caianiello\"/DF"
+         },
+         "Department of Computer Science/DI",
+         "Department of Civil Engineering/DICIV",
+         "Department of Information and Electrical Engineering and Applied Mathematics/DIEM",
+         "Department of Industrial Engineering/DIIN",
+         "Department of Mathematics/DIPMAT",
+         "Department of Medicine, Surgery and Dentistry \"Scuola Medica Salernitana\"/DIPMED",
+         "Department of Business Sciences - Management & Innovation Systems/DISA-MIS",
+         "Department of Cultural Heritage Sciences/DISPAC",
+         "Department of Economics and Statistics/DISES",
+         "Department of Legal Sciences (School of Law)",
+         "Department of Political and Communication Sciences/DISPC",
+         "Department of Humanities, Philosophy and Education/DISUFF",
+         "Department of Political and Social Studies/DISPS",
+         "Department of Humanities/DISPSUM"
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "University of Örebro",
+        "visibleIf": "{university_name} = 'University of Örebro'",
+        "title": "Select your Faculty",
+        "choices": [
+         {
+          "value": "Faculty of Business, Science and Engineering_Orebro",
+          "text": "Faculty of Business, Science and Engineering"
+         },
+         {
+          "value": "Faculty of Humanities and Social Sciences_Orebro",
+          "text": "Faculty of Humanities and Social Sciences"
+         },
+         {
+          "value": "Faculty of Medicine and Health_Orebro",
+          "text": "Faculty of Medicine and Health"
+         }
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "Faculty of Business, Science and Engineering_Orebro",
+        "visibleIf": "{University of Örebro} = 'Faculty of Business, Science and Engineering_Orebro'",
+        "title": "Select your Schools",
+        "choices": [
+         {
+          "value": "Örebro University School of Business_Orebro",
+          "text": "Örebro University School of Business"
+         },
+         {
+          "value": "Science and Technology_Orebro",
+          "text": "Science and Technology"
+         },
+         {
+          "value": "Hospitality, Culinary Arts and Meal Science_Orebro",
+          "text": "Hospitality, Culinary Arts and Meal Science"
+         }
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "Faculty of Humanities and Social Sciences_Orebro",
+        "visibleIf": "{University of Örebro} = 'Faculty of Humanities and Social Sciences_Orebro'",
+        "title": "Select your Schools",
+        "choices": [
+         {
+          "value": "Humanities, Education and Social Sciences",
+          "text": "Humanities, Education and Social Sciences_Orebro"
+         },
+         {
+          "value": "School of Behavioural, Social and Legal Sciences",
+          "text": "School of Behavioural, Social and Legal Sciences_Orebro"
+         },
+         {
+          "value": "Music, Theatre and Art",
+          "text": "Music, Theatre and Art_Orebro"
+         }
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "Faculty of Medicine and Health_Orebro",
+        "visibleIf": "{University of Örebro} = 'Faculty of Medicine and Health_Orebro'",
+        "title": "Select your Schools",
+        "choices": [
+         "Health Sciences_Orebro",
+         "Medical Sciences_Orebro"
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "Šiauliai State University of Applied Sciences",
+        "visibleIf": "{university_name} = 'Šiauliai State University of Applied Sciences'",
+        "title": "Select your Faculty",
+        "choices": [
+         {
+          "value": "Faculty of Health care_Siauliai",
+          "text": "Faculty of Health care"
+         },
+         {
+          "value": "Faculty of Business and Technologies_Siauliai",
+          "text": "Faculty of Business and Technologies"
+         }
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "Faculty of Health care_Siauliai",
+        "visibleIf": "{Šiauliai State University of Applied Sciences} = 'Faculty of Health care_Siauliai'",
+        "title": "Select your Department",
+        "choices": [
+         {
+          "value": "Biomedical Sciences Department",
+          "text": "Biomedical Sciences Department_Siauliai"
+         },
+         {
+          "value": "Rehabilitation Department",
+          "text": "Rehabilitation Department_Siauliai"
+         },
+         {
+          "value": "Social Work Department",
+          "text": "Social Work Department_Siauliai"
+         }
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "Faculty of Business and Technologies_Siauliai",
+        "visibleIf": "{Šiauliai State University of Applied Sciences} = 'Faculty of Business and Technologies_Siauliai'",
+        "title": "Select your Department",
+        "choices": [
+         {
+          "value": "Engineering Sciences Department_Siauliai",
+          "text": "Engineering Sciences Department"
+         },
+         {
+          "value": "Informatics Sciences Department_Siauliai",
+          "text": "Informatics Sciences Department"
+         },
+         {
+          "value": "Transport Engineering Department_Siauliai",
+          "text": "Transport Engineering Department"
+         },
+         {
+          "value": "Management and Communication Department_Siauliai",
+          "text": "Management and Communication Department"
+         },
+         {
+          "value": "Business and Accounting Department_Siauliai",
+          "text": "Business and Accounting Department"
+         }
+        ]
+       }
+      ],
+      "title": "\nSelect your University"
+     }
+    ]
+   }
