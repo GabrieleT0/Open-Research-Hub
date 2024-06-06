@@ -20,6 +20,7 @@ const EmailForm = ( {onNext} ) => {
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Insert your email' id='input-mail'/>
             {!isValid && <p>Email non valida</p>}
             <br></br>
+            <p>Privacy policy here</p>
             <button type="submit" id='send-otp-btn'>Send me the OTP</button>
       </form>
     )
