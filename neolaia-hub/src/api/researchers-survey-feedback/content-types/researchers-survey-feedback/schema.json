@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "researchers_survey_feedbacks",
+  "info": {
+    "singularName": "researchers-survey-feedback",
+    "pluralName": "researchers-survey-feedbacks",
+    "displayName": "researchers_survey_feedback",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "how_easy_was_to_fill_in_the_survey": {
+      "type": "integer"
+    },
+    "how_quick_was_to_fill_in_the_survey": {
+      "type": "integer"
+    },
+    "how_accurate_do_you_think_is_your_profile": {
+      "type": "integer"
+    },
+    "any_other_comments": {
+      "type": "text"
+    }
+  }
+}

@@ -32,7 +32,6 @@ personal_info.pages.push(free_keywords.pages[0])
 
 function MappingResearchers({token}){
     const research_survey = new Model(personal_info)
-
     //Function executed when the survey is submitted
     research_survey.onComplete.add( function (sender, options){
         options.showSaveInProgress();
@@ -42,6 +41,7 @@ function MappingResearchers({token}){
         xhr.onload = xhr.onerror = function () {
             if (xhr.status === 200){
                 options.showSaveSuccess("Thank you.");
+                research_survey.completedHtml = 'Thank you for completing the survey <br> <a href="./researchersfeedback">Share your feedback with a very short 1 minute form</a>'
             } else {
                 options.showSaveError("Error during survey submission, try again.")
             }
@@ -51,7 +51,6 @@ function MappingResearchers({token}){
             survey_data : survey_data,
             token : token
         }
-        console.log(data)
         xhr.send(JSON.stringify(data));
     })
     return <Survey model={research_survey} />

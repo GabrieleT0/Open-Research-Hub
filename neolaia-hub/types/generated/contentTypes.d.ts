@@ -900,6 +900,40 @@ export interface ApiResearchInfoSurveyResearchInfoSurvey
   };
 }
 
+export interface ApiResearchersSurveyFeedbackResearchersSurveyFeedback
+  extends Schema.CollectionType {
+  collectionName: 'researchers_survey_feedbacks';
+  info: {
+    singularName: 'researchers-survey-feedback';
+    pluralName: 'researchers-survey-feedbacks';
+    displayName: 'researchers_survey_feedback';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    how_easy_was_to_fill_in_the_survey: Attribute.Integer;
+    how_quick_was_to_fill_in_the_survey: Attribute.Integer;
+    how_accurate_do_you_think_is_your_profile: Attribute.Integer;
+    any_other_comments: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::researchers-survey-feedback.researchers-survey-feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::researchers-survey-feedback.researchers-survey-feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -921,6 +955,7 @@ declare module '@strapi/types' {
       'api::form.form': ApiFormForm;
       'api::neolaia-user.neolaia-user': ApiNeolaiaUserNeolaiaUser;
       'api::research-info-survey.research-info-survey': ApiResearchInfoSurveyResearchInfoSurvey;
+      'api::researchers-survey-feedback.researchers-survey-feedback': ApiResearchersSurveyFeedbackResearchersSurveyFeedback;
     }
   }
 }
