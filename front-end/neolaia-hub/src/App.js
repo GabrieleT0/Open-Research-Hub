@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 
 function App() {
   return (
-      <Router basename='auth-form'>
+      <Router basename='/surveys'>
         <Routes>
-          <Route path="*" element={<AuthenticatedForm />}/>
+          <Route basename={'/surveys'} path="/researchers" element={<AuthenticatedForm />}/>
         </Routes>
       </Router>
   );
