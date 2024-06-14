@@ -15,7 +15,7 @@ module.exports = {
             await transporter.sendMail({
                 from: process.env.USER_MAIL,
                 to: email,
-                subject: 'Code for fill the form',
+                subject: 'NEOLAiA Researchers survey: code to be used to fill the form',
                 text: `Your OTP password to fill the form is: ${random_string} \n
                 The password expires in 1 hour.`,
             });
