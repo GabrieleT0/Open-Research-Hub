@@ -29,7 +29,7 @@
          {
           "type": "regex",
           "text": "The page address must come from one of neolaia's partner university domains",
-          "regex": "\\b(?:[A-Za-z0-9.-]+\\.)?(osu\\.cz|usm\\.ro|unic\\.ac\\.cy|oru\\.se|svako\\.lt|ujaen\\.es|univ-tours\\.fr|uni-bielefeld\\.de|unisa\\.it)\\b"
+          "regex": "\\b(?:[A-Za-z0-9.-]+\\.)?(osu\\.cz|usm\\.ro|unic\\.ac\\.cy|oru\\.se|osu\\.eu|svako\\.lt|ujaen\\.es|univ-tours\\.fr|uni-bielefeld\\.de|unisa\\.it)\\b"
          }
         ]
        },
