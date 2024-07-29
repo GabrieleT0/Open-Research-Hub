@@ -5,8 +5,8 @@ const OTPForm = ({ onAuthenticate }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        onAuthenticate(otp)
+        const trimmed = otp.trim()
+        onAuthenticate(trimmed)
     }
 
 
