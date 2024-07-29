@@ -8,7 +8,7 @@ const EmailForm = ( {onNext, privacy_policy, accept_policy_message} ) => {
 
     const handle_submit = (e) => {
         e.preventDefault();
-        const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usv\.ro|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it)\b/;
+        const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usv\.ro|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it|osu\.eu)\b/;
         if(isPolicyAccepted === false){
             const policy_error = <span style={{color:"red"}}>You must accept the privacy policy in order to continue</span>
             setPolicyMessage(policy_error)

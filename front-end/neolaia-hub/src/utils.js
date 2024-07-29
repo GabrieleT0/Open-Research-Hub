@@ -1,5 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 import { decode } from "base-64";
+import { base_url } from './api';
+import axios from 'axios';
 global.atob = decode;
 
 
@@ -20,4 +22,25 @@ function token_is_valid(){
     return true
 }
 
-export default token_is_valid;
+async function check_if_alredy_compiled(token){
+    try {
+        const response = await axios.post(`${base_url}research-info-surveys/check_if_compiled/`,{
+            token:token
+        });
+        const result = response.data.result
+
+        return result
+    } catch (error){
+        console.error("Error:", error)
+        if( error.response && error.response.data){
+            return error.response.data
+        } else {
+            return "An unexpected error occurred. Please try again."
+        }
+    }
+}
+
+export {
+    token_is_valid, 
+    check_if_alredy_compiled,
+};

@@ -13,7 +13,9 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
         const user_id = ctx.request.body.data.user_id
         let entry;
         entry = await strapi.db.query('api::research-info-survey.research-info-survey').findOne({
-            user_id : user_id
+            where: {
+                user_id : user_id
+            }
         })
         if(entry){
             return entry
@@ -64,4 +66,40 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
         return rows
     },
 
+    async check_if_compiled(ctx,next){
+        const user_id = ctx.request.body.data.user_id
+        let entry;
+        entry = await strapi.db.query('api::research-info-survey.research-info-survey').findOne({
+            where: {
+                user_id : user_id
+            }
+        })
+        if(entry){
+            const result ={
+                result: true
+            }
+            return result
+        } else {
+            const result ={
+                result: false
+            }
+            return result
+        }
+    },
+
+    async delete_submission(ctx,next){
+        const user_id = ctx.request.body.data.user_id
+        let entry;
+        entry =  await strapi.db.query('api::research-info-survey.research-info-survey').delete({
+            where: { user_id: user_id },
+        });
+
+        if(entry){
+            return entry
+        } else {
+            ctx.status = 400
+            ctx.body = {error: 'Data not found'}
+            return
+        }
+    }
 }))
