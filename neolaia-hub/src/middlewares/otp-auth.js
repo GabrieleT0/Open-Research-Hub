@@ -2,7 +2,6 @@ module.exports = (config, { strapi }) => {
     return async (ctx, next) =>{
         const jwt = require('jsonwebtoken');
         const token = ctx.request.body.token
-        
         //needed in case data is passed not in a standard form to automatic be parsed from strapi. If the data key is already there
         //don't override the data key because in this way you cancel the data passed from the frontend
         if(typeof ctx.request.body.data === 'undefined')
