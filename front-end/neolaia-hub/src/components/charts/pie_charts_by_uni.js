@@ -68,7 +68,9 @@ function PieChart({chart_title, series}){
 
 
     return (
-    <HighchartsReact highcharts={Highcharts} options={create_options(chart_title,data)} />
+        <div style={{ height: '480px' }}>
+            <HighchartsReact highcharts={Highcharts} options={create_options(chart_title,data)} />
+        </div>
     )
 }
 

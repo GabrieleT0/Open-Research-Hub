@@ -20,17 +20,35 @@ function create_options(chart_title,data){
                 name : 'Universities',
                 type: 'treemap',
                 layoutAlgorithm: 'squarified',
-                allowDrillToNode: true,
+                alternateStartingDirection: true,
+                allowTraversingTree: true,
+                levelIsConstant: false,
                 dataLabels: {
                     enabled: false
                 },
                 levels: [
                     {
                         level: 1,
+                        layoutAlgorithm: 'sliceAndDice',
                         dataLabels: {
                             enabled: true,
                             style: {
-                                textOutline: false
+                                fontSize: '14px',
+                                color: 'black',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        borderWidth: 3
+                    },
+                    {
+                        level: 2,
+                        layoutAlgorithm: 'sliceAndDice',
+                        dataLabels: {
+                            enabled: false,
+                            style: {
+                                fontSize: '14px',
+                                color: 'black',
+                                fontWeight: 'bold'
                             }
                         },
                         borderWidth: 3
@@ -113,7 +131,9 @@ function TreeMap({chart_title, series}){
 
 
     return (
-    <HighchartsReact highcharts={Highcharts} options={create_options(chart_title,data)} />
+        <div style={{ height: '500px' }}>
+            <HighchartsReact highcharts={Highcharts} options={create_options(chart_title,data)} containerProps={{ style: { height: '100%' } }} />
+        </div>
     )
 }
 

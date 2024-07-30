@@ -35,10 +35,12 @@ function ResearcherDash(){
                     <Col md={3}>
                         <Counter />
                     </Col>
-                    <Col md={4}>
+                    <Col md={9}>
                         <PieChart chart_title={'Total number of submission by University'}/>
                     </Col>
-                    <Col md={5}>
+                </Row>
+                <Row>
+                    <Col>
                         <CloudWords />
                     </Col>
                 </Row>
