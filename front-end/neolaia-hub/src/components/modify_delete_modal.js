@@ -56,7 +56,6 @@ function ModifyDeleteForm({token}) {
       });
       if(response.status >= 200 && response.status < 300){
         navigate('/editresearcherdata', {state: response.data})
-        console.log(response)
       } else {
         console.error('Request was not successful. Status:', response.status);
       }

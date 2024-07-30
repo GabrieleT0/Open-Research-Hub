@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthenticatedForm from './pages/authenticated_form';
 import ResearchersFeedbackPage from './pages/researchers_survey_feedback';
 import EditResearcherPage from './pages/edit_researchers_form';
+import ResearcherDash from './pages/researchers_dashboard';
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route basename={'/surveys'} path="/researchers" element={<AuthenticatedForm />}/>
           <Route basename={'/surveys'} path="/researchersfeedback" element={<ResearchersFeedbackPage />} />
           <Route basename={'/surveys'} path="/editresearcherdata" element={<EditResearcherPage />} />
+          <Route basename={'/surveys'} path='/researchers-dashboard' element={<ResearcherDash />} /> 
         </Routes>
       </Router>
   );
