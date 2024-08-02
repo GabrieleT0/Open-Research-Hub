@@ -80,9 +80,13 @@ function TreeMap({chart_title, series}){
             const response = await axios.get(`${base_url}research-info-surveys/count_submission_by_uni/`)
             const response2 = await axios.get(`${base_url}research-info-surveys/count_by_departmens/`)
             const response3 = await axios.get(`${base_url}research-info-surveys/count_by_faculties/`)
+            const response4 = await axios.get(`${base_url}research-info-surveys/count_by_research_units/`)
+            const response5 = await axios.get(`${base_url}research-info-surveys/count_by_specific_units/`)
             const response_data = response.data
             const response_data2 = response2.data
             const response_data3 = response3.data
+            const research_area = response4.data
+            const specific_research_units = response5.data
             let by_uni = []
             for(let i = 0; i<response_data.length; i++){
                 const element = {
@@ -113,6 +117,24 @@ function TreeMap({chart_title, series}){
                     }
                     by_uni.push(element)
                 }
+            }
+            for(let i = 0; i<research_area.length; i++){
+                const element = {
+                    id: research_area[i].research_units_tours,
+                    name : research_area[i].research_units_tours,
+                    value : parseInt(research_area[i].occurrences),
+                    parent : research_area[i].university_name
+                }
+                by_uni.push(element)
+            }
+            for(let i = 0; i<specific_research_units.length; i++){
+                const element = {
+                    id: specific_research_units[i].specific_research_units_tours,
+                    name : specific_research_units[i].specific_research_units_tours,
+                    value : parseInt(specific_research_units[i].occurrences),
+                    parent : specific_research_units[i].research_units_tours
+                }
+                by_uni.push(element)
             }
             by_uni.sort((a, b) => {
                 if (a.name < b.name) return -1;

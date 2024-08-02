@@ -142,6 +142,30 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
         return rows
     },
 
+    async count_by_research_units(ctx, next){
+        let {rows} = await strapi.db.connection.raw(`
+            SELECT university_name, research_units_tours, COUNT(*) AS occurrences
+            FROM research_info_surveys
+            WHERE university_name = 'University of Tours'
+            GROUP BY university_name, research_units_tours
+            ORDER BY university_name, research_units_tours;
+        `)
+
+        return rows
+    },
+
+    async count_by_specific_units(ctx, next){
+        let {rows} = await strapi.db.connection.raw(`
+            SELECT research_units_tours, specific_research_units_tours, COUNT(*) AS occurrences
+            FROM research_info_surveys
+            WHERE university_name = 'University of Tours'
+            GROUP BY research_units_tours, specific_research_units_tours
+            ORDER BY research_units_tours, specific_research_units_tours;
+        `)
+
+        return rows
+    },
+
     async check_if_compiled(ctx,next){
         const user_id = ctx.request.body.data.user_id
         let entry;
@@ -183,6 +207,8 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
         const university = ctx.request.body.searchParams.university
         const first_level_str = ctx.request.body.searchParams.department
         const second_level_str = ctx.request.body.searchParams.faculty
+        const research_unit_tours = ctx.request.body.searchParams.research_unit_tours
+        const specific_unit_tours = ctx.request.body.searchParams.specific_unit_tours
         const erc_area = ctx.request.body.searchParams.erc_area
         const erc_panel = ctx.request.body.searchParams.erc_panel
         const erc_keyword = ctx.request.body.searchParams.erc_keyword
@@ -192,8 +218,9 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
         const researcher_name = ctx.request.body.searchParams.researcher_name ? ctx.request.body.searchParams.researcher_name.trim() : '';
         const researcher_surname = ctx.request.body.searchParams.researcher_surname ? ctx.request.body.searchParams.researcher_surname.trim() : '';
         const free_keywords = ctx.request.body.keywords
-        console.log(ctx.request.body.searchParams)
         const filters = { $and: [] };
+
+        console.log(ctx.request.body.searchParams)
 
             // Filter for researcher name and surname
         if (researcher_name) {
@@ -220,6 +247,8 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
         if (university) filters.$and.push({ university_name: university });
         if (first_level_str) filters.$and.push({ department: first_level_str });
         if (second_level_str) filters.$and.push({ faculty: second_level_str });
+        if (research_unit_tours) filters.$and.push({ research_units_tours: research_unit_tours });
+        if (specific_unit_tours) filters.$and.push({ specific_research_units_tours: specific_unit_tours });
 
         // ERC Area
         if (erc_area) {

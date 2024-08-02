@@ -46,6 +46,16 @@ module.exports = {
             handler: "research-info-survey.count_by_faculties"
         },
         {
+            method: "GET",
+            path : "/research-info-surveys/count_by_research_units/",
+            handler: "research-info-survey.count_by_research_units"
+        },
+        {
+            method: "GET",
+            path : "/research-info-surveys/count_by_specific_units/",
+            handler: "research-info-survey.count_by_specific_units"
+        },
+        {
             method: "POST",
             path : "/research-info-surveys/check_if_compiled/",
             handler: "research-info-survey.check_if_compiled",
