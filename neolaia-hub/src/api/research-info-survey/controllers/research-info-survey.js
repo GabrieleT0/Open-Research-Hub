@@ -35,7 +35,7 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
             UNION ALL
             SELECT free_keyword_3 AS matched_keyword FROM research_info_surveys
         ) AS keywords
-        WHERE matched_keyword IS NOT NULL
+        WHERE matched_keyword IS NOT NULL AND matched_keyword <> ''
         GROUP BY matched_keyword;
         `
         )
