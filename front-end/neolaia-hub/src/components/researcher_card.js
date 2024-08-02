@@ -11,7 +11,12 @@ function ResearcherCard({ card_data }) {
         if(!card_data.personal_page_link.includes('http'))
             card_data.personal_page_link = `https://${card_data.personal_page_link}`
     }
-    console.log(card_data.free_keyword_1)
+
+    if(card_data.research_group_link){
+        if(!card_data.research_group_link.includes('http'))
+            card_data.research_group_link = `https://${card_data.research_group_link}`
+    }
+
     const handleSelect = (eventKey) => {
         setActiveTab(eventKey);
     };
@@ -47,7 +52,7 @@ function ResearcherCard({ card_data }) {
                             {card_data.specific_research_units_tours && <p><b>Research unit:</b> {card_data.specific_research_units_tours}</p>}
                         </Card.Text>
                         {card_data.personal_page_link && <Button variant="primary" href={card_data.personal_page_link} target="_blank" rel="noopener noreferrer" id='personal-btn'>Go to the personal page</Button>}
-                        {card_data.personal_page_link && <Button variant="primary" href={card_data.personal_page_link} target="_blank" rel="noopener noreferrer" style={{marginLeft: '10px'}} id='research-btn'>Go to the Research group link</Button>}
+                        {card_data.research_group_link && <Button variant="primary" href={card_data.research_group_link} target="_blank" rel="noopener noreferrer" style={{marginLeft: '10px'}} id='research-btn'>Go to the Research group link</Button>}
                         {card_data.orcid_link && <Button variant="secondary" href={card_data.orcid_link} target="_blank" rel="noopener noreferrer" style={{marginLeft: '10px'}} id='orcid-btn'> ORCID profile </Button>}
                     </>
                 )}
