@@ -49,6 +49,12 @@ const SearchForm = ({onSearch}) => {
             formData.research_unit_tours = ''
             formData.specific_unit_tours = ''
         }
+        if(name === 'department'){
+            formData.faculty = ''
+            formData.department = ''
+            formData.research_unit_tours = ''
+            formData.specific_unit_tours = ''
+        }
         
         setFormData({
             ...formData,
