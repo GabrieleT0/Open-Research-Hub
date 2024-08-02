@@ -97,10 +97,20 @@ const SearchResearchers = () => {
           }
         ]
         response.data.map((item) => {
+          console.log(item)
           if(!item.personal_page_link.includes('http'))
             item.personal_page_link = <a href={`https://${item.personal_page_link}`} target="_blank">{item.personal_page_link}</a>
           else
             item.personal_page_link = <a href={`${item.personal_page_link}`} target="_blank">{item.personal_page_link}</a>
+          if(!item.research_group_link.includes('http'))
+            item.research_group_link = <a href={`https://${item.research_group_link}`} target="_blank">{item.research_group_link}</a>
+          else
+            item.research_group_link = <a href={`${item.research_group_link}`} target="_blank">{item.research_group_link}</a>
+          if(!item.orcid_link.includes('http'))
+            item.orcid_link = <a href={`https://${item.orcid_link}`} target="_blank">{item.orcid_link}</a>
+          else
+            item.orcid_link = <a href={`${item.orcid_link}`} target="_blank">{item.orcid_link}</a>
+          
         })
         setResults(response.data);
         setColumns(columns_data);
