@@ -412,5 +412,200 @@
         "Dynamical Systems",
         "Neural Networks and Computer Vision",
         "Fuzzy modeling"
+    ],
+
+    "University of Tours": [
+        "BBV - Plant Biocompounds and Biotechnology - RU 2106_Tours",
+        "IRBI - Institute of Research on Insect Biology - UMR 7261_Tours",
+        "BOA - Bird Biology and Poultry - UMR INRAE 0083_Tours",
+        "PRC - Physiology of Reproduction and Behaviour - UMR CNRS 7247 - INRAE 0085_Tours",
+        "CBM-NMNS - Nanomedecines and Nanoprobes - UPR 6295_Tours",
+        "CEPR - Research Centre for Respiratory Diseases - Inserm U 1100_Tours",
+        "CeRCA - Research Centre on Cognition and Learning - UMR CNRS 7295_Tours",
+        "IBraiN - Imaging, Brain and Neurphychiatry - Inserm U 1253_Tours",
+        "ISCHEMIA - Membrane Signalling and Inflamation in reperfusion injuries - Inserm UMR 1327_Tours",
+        "ISP - Infectious Diseases and Public Health - UMR INRAE 1282_Tours",
+        "N2Cox - Niche, Nutrition, Cancer and Oxidative metabolism - Inserm U 1069_Tours",
+        "MAVIVHe - Morphogenesis and Antigenicity of HIV, Hepatitis and Emerging Viruses - Inserm U 1259_Tours",
+        "SIMBA - Synthesis and Isolation of Bio-Active Molecules - RU 7502_Tours",
+        "EES - Education Ethics Health - RU 7505_Tours",
+        "SPHERE - methodS in Patient-centeres outcomes and Health ResEarch - Inserm U 1246_Tours",
+        "PAVeA - Psychology of the Various Stages of Life and Adaptation - RU 2114_Tours",
+        "QualiPsy - Quality of life and psychological health - RU 1901_Tours",
+        "GREMAN - Materials Microelectronics Acoustics Nanotechnology - UMR 7347_Tours",
+        "LaMé - Laboratory of Mechanics Gabriel Lamé - RU 7494_Tours",
+        "PCM2E - Laboratory of Physical Chemistry of Materials and Electrolytes for Energy - RU 6299_Tours",
+        "GeHCO - Continental Geo-Hydrosystems - RU 6293_Tours",
+        "IDP - Denis Poisson Institute - UMR 7013_Tours",
+        "LIFAT - Tours Research Laboratory in Fundamental and Applied Computer Science - RU 6300_Tours",
+        "IRJI - Institute for Interdisciplinary Legal Research - RU 7496_Tours",
+        "CITERES - Centre for Cities, Territories, Environment and Societies - UMR CNRS 7324_Tours",
+        "PRIM - Information and mediation practices and resources - RU 7503_Tours",
+        "LEO - Laboratory of Economics Orelan-Tours Team - RU 2014_Tours",
+        "VALLOREM - Val de Loire Management Research - RU 6296_Tours",
+        "LLL - Loire Linguistics Laboratory Tours Team - UMR CNRS 7270_Tours",
+        "InTRu - Artistic and Cultural Interactions, Transfers and Breaks - RU 6301_Tours",
+        "Dynadiv - Linguistic and Cultural Diversity in Sociolinguistics and Language Didactics - RU 4428_Tours",
+        "CeTHIS - Tourangeau Centre for the History and Study of Sources - UR 6298_Tours",
+        "ICD - Cultural and Discursive Interactions - RU 6297_Tours",
+        "CESR - Center for Advanced Renaissance Studies - UMR CNRS 7323_Tours"
+    ],
+
+    "IRBI - Institute of Research on Insect Biology - UMR 7261_Tours": [
+        "IMIP - Biodiversity and interactions between Micro-organisms/Insects/Plants",
+        "ESORE - Social evolution and responses to the environment",
+        "INOV - Interactions organisms-environment: mechanisms and responses to global changes",
+        "Other or several"
+    ],
+
+    "BOA - Bird Biology and Poultry - UMR INRAE 0083_Tours": [
+        "BOPP - Biology of the egg and physiology of the hen",
+        "GENUTS - Genetics, Nutrition, Systems",
+        "MOQA - Bird Metabolism, Quality and Adaptation",
+        "Other or several"
+    ],
+
+    "PRC - Physiology of Reproduction and Behaviour - UMR CNRS 7247 - INRAE 0085_Tours": [
+        "Cognition, Ethology and Animal Welfare - CEB",
+        "Neuroethology and Social cognition - NECOS",
+        "Neuroendocrine Integration of Reproduction and Behavior - INERC",
+        "Molecular Neuroendocrinology of Reproduction - NMR",
+        "Biology of GPCR signaling systems",
+        "Energy sensors and reproductive signalisation - SENSOR",
+        "Integrative Gonad Biology - BINGO",
+        "Cellular interactions and fertility -ICF",
+        "Other or several"
+    ],
+
+    "CEPR - Research Centre for Respiratory Diseases - Inserm U 1100_Tours": [
+        "Pathophysiology of lung infections",
+        "Proteolytic enzymes and their pharmacological targeting in lung diseases",
+        "Pharmacology of inhaled pharmaceuticals",
+        "Biology of innate T cells & Lung immunity (Infection and autoimmunity)",
+        "Other or several"
+    ],
+
+    "CeRCA - Research Centre on Cognition and Learning - UMR CNRS 7295_Tours": [
+        "Aging and Psychopathology of Memory - VIPsyM",
+       "Other or several"
+    ],
+
+    "ISP - Infectious Diseases and Public Health - UMR INRAE 1282_Tours": [
+        "Bacteria and maternal/fœtal risk",
+        "Bacterial Infections and Immunity in Ruminants",
+        "Genomic Plasticity, Biodiversity, and Antimicrobial Resistance",
+        "Microbiota, Monogastric and Salmonella",
+        "Apicomplexa and Mucosal Immunity",
+        "BioPharmaceuticals and Microorganisms Against Pathologies",
+        "Control and Resistance of Macro-parasites",
+        "Biology of Polyomavirus Infections",
+        "Biology of Avian Viruses",
+        "Infection and Innate Immunity in Monogastric livestock",
+        "Other or several"
+    ],
+
+    "IBraiN - Imaging, Brain and Neurphychiatry - Inserm U 1253_Tours": [
+        "Neruo-functional Psychiatry",
+        "Neurogenomics and Neuronal Physiopathology",
+        "Morphofunctional Imaging and Therapeutic Ultrasound",
+        "Other or several"
+    ],
+
+    "N2Cox - Niche, Nutrition, Cancer and Oxidative metabolism - Inserm U 1069_Tours": [
+        "Cluster Randomized Trials and Complex Interventions",
+        "Definition, selection, validation, and assessment of outcomes",
+        "Methods for the measurement and interpretation of Self-Reported Outcomes",
+        "Prediction and Causality",
+        "Other or several"
+    ],
+
+    "SPHERE - methodS in Patient-centeres outcomes and Health ResEarch - Inserm U 1246_Tours": [
+        "Cluster Randomized Trials and Complex Interventions",
+        "Definition, selection, validation, and assessment of outcomes",
+        "Methods for the measurement and interpretation of Self-Reported Outcomes",
+        "Prediction and Causality",
+        "Other or several"
+    ],
+
+    "GREMAN - Materials Microelectronics Acoustics Nanotechnology - UMR 7347_Tours": [
+        "OXYDES - Functional oxides for energy efficiency : nanostructuration and combinatorial synthesis",
+        "DISCUS - Ultrasonic devices and characterizationOXYDES - Functional oxides for energy efficiency : nanostructuration and combinatorial synthesis",
+        "ECOSYM - Energy, COmponents, SYstems, Microelectronic",
+        "Other or several"
+    ],
+
+    "LaMé - Laboratory of Mechanics Gabriel Lamé - RU 7494_Tours": [
+        "C2MP - Mechanical Beha-viour of Materials and Processes",
+        "DVS - Dynamics and Vibrations of Structures",
+        "C3M - Multi-scale, Multi-physics Characterisation and Modelling",
+        "DFV - Degradation, Fa-tigue and Vulnerability",
+        "Other or several"
+    ],
+
+    "PCM2E - Laboratory of Physical Chemistry of Materials and Electrolytes for Energy - RU 6299_Tours": [
+        "Electrochemistry, interfaces and devices for energy storage",
+        "Innovative electrolytes and advanced ionic media",
+        "Pi-conjugated materials and polymers",
+        "Other or several"
+    ],
+
+    "IDP - Denis Poisson Institute - UMR 7013_Tours" : [
+        "Theoretical Physics",
+        "PDE, Modeling, Simulation",
+        "Probability, Algebra, Combinatorics, Ergodic Theory, Statistics",
+        "Analysis and Geometry",
+        "Other or several"
+    ],
+
+    "LIFAT - Tours Research Laboratory in Fundamental and Applied Computer Science - RU 6300_Tours" : [
+        "BdTin - Databases and Natural Language Processing",
+        "RFAI - Pattern Recognition and Image Analysis",
+        "ROOT - Operations research, scheduling, and transportation",
+        "Other or several"
+    ],
+
+    "CITERES - Centre for Cities, Territories, Environment and Societies - UMR CNRS 7324_Tours" : [
+        "COST - The social and political construction of spaces, norms and trajectories",
+        "EMAM - The Arab world and the Mediterranean region",
+        "DATE - Territorial and Environmental Dynamics and Action",
+        "LAT - Archeology and Territory",
+        "Other or several"
+    ],
+
+    "VALLOREM - Val de Loire Management Research - RU 6296_Tours" : [
+        "Strategic management of people and projects",
+        "understanding consumer behavior",
+        "organizational and management control systems / Organisational creativity,management and performance of innovation",
+        "Other or several"
+    ],
+
+    "LLL - Loire Linguistics Laboratory Tours Team - UMR CNRS 7270_Tours" : [
+        "CADO - Language practices, construction of knowledge and literacy, oral data",
+        "MP - Morphophonology",
+        "VETD-DO - Construction of meaning and formal grammars, oral data",
+        "Other or several"
+    ],
+
+    "CeTHIS - Tourangeau Centre for the History and Study of Sources - UR 6298_Tours" : [
+        "Urban dynamics and spaces",
+        "Historical practices and the construction of historical objets",
+        "Sources and corpus - tools and data",
+        "Other or several"
+    ],
+
+    "ICD - Cultural and Discursive Interactions - RU 6297_Tours" : [
+        "The individual in the political/public arena",
+        "Individual practices and literary, artistic and scientific traditions",
+        "Minorities and the Collective; Man and Nature",
+        "Other or several"
+    ],
+
+    "CESR - Center for Advanced Renaissance Studies - UMR CNRS 7323_Tours" : [
+        "Humanism",
+        "Making and knowing in the Renaissance",
+        "European scene: performance arts, performance of the arts",
+        "Cultures of religious and political pluralism: conflicts and concords",
+        "Arts in the Renaissance: corpora, methods and influences",
+        "Other or several"
     ]
 }

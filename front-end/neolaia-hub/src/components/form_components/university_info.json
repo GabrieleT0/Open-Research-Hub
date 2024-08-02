@@ -1371,15 +1371,8 @@
      "title": "Select your specific research units",
      "isRequired": true,
      "choices": [
-      {
-       "value": "Item 1",
-       "text": "Aging and Psychopathology of Memory - VIPsyM"
-      },
-      {
-       "value": "Item 2",
-       "text": "Other or several"
-      },
-      "Item 3"
+       "Aging and Psychopathology of Memory - VIPsyM",
+       "Other or several"
      ]
     },
     {

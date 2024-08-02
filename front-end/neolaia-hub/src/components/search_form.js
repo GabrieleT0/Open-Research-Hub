@@ -21,6 +21,8 @@ const SearchForm = ({onSearch}) => {
         erc_keyword_int: '',
         researcher_name: '',
         researcher_surname: '',
+        research_unit_tours: '',
+        specific_unit_tours: '',
     })
 
     const [ercPanelData,setErcPanelData] = useState([])
@@ -32,6 +34,8 @@ const SearchForm = ({onSearch}) => {
     const [showFaculty, setShowFaculty] = useState(false)
     const [freeKeywords, setFreeKeywords] = useState([])
     const [selectedKeywords, setSelectedKeywords] = useState([])
+    const [researchUnitData, setResearchUnit] = useState([])
+    const [specificUnitData, setSpecificUnit] = useState([])
 
     const handleChange = (e) => {
         const {name , value} = e.target;
@@ -39,6 +43,12 @@ const SearchForm = ({onSearch}) => {
             formData.erc_keyword = ''
         if(name == 'erc_panel_int' && value == '')
             formData.erc_keyword_int = ''
+        if(name == 'university'){
+            formData.faculty = ''
+            formData.department = ''
+            formData.research_unit_tours = ''
+            formData.specific_unit_tours = ''
+        }
         
         setFormData({
             ...formData,
@@ -88,6 +98,22 @@ const SearchForm = ({onSearch}) => {
             setShowFaculty(true)
         }
     }, [formData.department])
+
+    useEffect(() => {
+        if(formData.university && faculties_data[formData.university]){
+            setResearchUnit(faculties_data[formData.university])
+        } else {
+            setResearchUnit('')
+        }
+    }, [formData.university])
+
+    useEffect(() => {
+        if(formData.research_unit_tours && faculties_data[formData.research_unit_tours]){
+            setSpecificUnit(faculties_data[formData.research_unit_tours])
+        } else {
+            setSpecificUnit('')
+        }
+    }, [formData.research_unit_tours])
 
 
     useEffect(() => {
@@ -167,6 +193,38 @@ const SearchForm = ({onSearch}) => {
                             </Form.Group>
                         </Col>
                     )}
+                    <Row className='mb-3'>
+                    {
+                        researchUnitData!= ''  && (
+                                <Col>
+                                    <Form.Group controlId='formUni'>
+                                        <Form.Label>Select the research area</Form.Label>
+                                        <Form.Control as="select" name="research_unit_tours" value={formData.research_unit_tours} onChange={handleChange} disabled={!formData.university}>
+                                            <option value="">Select the research area</option>
+                                            {researchUnitData.map((dep, index) => (
+                                                <option key={index} value={dep}>{dep.split('_')[0]}</option>
+                                            ))}
+                                        </Form.Control>
+                                    </Form.Group>
+                                </Col>
+                        )
+                    }
+                    {
+                        specificUnitData!= '' && (
+                            <Col>
+                                <Form.Group controlId='formUni'>
+                                    <Form.Label>Select the research unit</Form.Label>
+                                    <Form.Control as="select" name="specific_unit_tours" value={formData.specific_unit_tours} onChange={handleChange} disabled={!formData.research_unit_tours}>
+                                        <option value="">Select the research unit</option>
+                                        {specificUnitData.map((dep, index) => (
+                                            <option key={index} value={dep}>{dep}</option>
+                                        ))}
+                                    </Form.Control>
+                                </Form.Group>
+                            </Col>
+                        )
+                    }
+                </Row>
                 </Row>
                 <Row className='mb-3'>
                     <Col>
