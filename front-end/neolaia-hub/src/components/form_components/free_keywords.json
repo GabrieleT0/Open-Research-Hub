@@ -17,6 +17,8 @@
           "type": "text",
           "name": "free_keyword",
           "title": "Free keyword",
+          "description": "Enter only one keyword for each textbox. Click on \"add a new free keyword\" to add another one.",
+          "maxLength": 20,
           "choicesByUrl": {
             "url": "https://data.neolaiacampus.eu/strapi/api/research-info-surveys/search_keywords/",
             "valueName": "display_value"
@@ -25,7 +27,8 @@
         ],
         "panelCount": 1,
         "minPanelCount": 1,
-        "maxPanelCount": 3
+        "maxPanelCount": 3,
+        "panelAddText": "Add a new free keyword"
        }
       ]
      }
