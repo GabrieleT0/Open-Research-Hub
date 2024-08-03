@@ -60,7 +60,7 @@ function CloudWords({chart_title, series}){
                 text += ` ${response_data[i]}`
 
             }
-            let lines = text.replace(/[():'?0-9]+/g, '').split(/[,\. ]+/g),
+            let lines = text.replace(/[():'?0-9]+/g, '').split(/[\. ]+/g),
             data = lines.reduce((arr, word) => {
                 let obj = Highcharts.find(arr, obj => obj.name === word);
                 if (obj) {

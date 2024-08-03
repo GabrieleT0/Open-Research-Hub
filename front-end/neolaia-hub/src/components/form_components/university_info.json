@@ -801,7 +801,7 @@
      "title": "Select your research unit",
      "isRequired": true,
      "choices": [
-      "Molecular Biology ",
+      "Molecular Biology",
       "Neurobiology",
       "Ecology and Behavioural Biology",
       "Didactics"

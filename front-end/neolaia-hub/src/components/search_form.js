@@ -56,7 +56,7 @@ const SearchForm = ({onSearch}) => {
                     keyword = keyword.replace('-','')
                 }
                 keyword = keyword.replace('-',' ')
-                setSelectedKeywords([keyword])
+                selectedKeywords.push(keyword)
             }
             if(university_name){
                 formData.university = university_name
