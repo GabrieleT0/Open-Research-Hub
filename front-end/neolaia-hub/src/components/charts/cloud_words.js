@@ -26,6 +26,19 @@ function create_options(chart_title,data){
         tooltip: {
             headerFormat: '<span style="font-size: 16px"><b>{point.key}</b>' +
                 '</span><br>'
+        },
+        plotOptions: {
+            series: {
+                cursor: 'pointer',
+                point:{
+                    events: {
+                        click: function(){
+                            const url = `./search-researchers?keyword=${this.name}`;
+                            window.open(url, '_blank');
+                        }
+                    },
+                }
+            }
         }
     }
     

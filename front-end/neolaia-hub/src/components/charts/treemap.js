@@ -55,6 +55,35 @@ function create_options(chart_title,data){
                     }
                 ],
                 data: data,
+                cursor: 'pointer',
+                point: {
+                    events: {
+                        click: function() {
+                            console.log(this)
+                            if (!this.node.children.length) {
+                                const university = this.node.parentNode.parent
+                                const first_level = this.node.parent
+                                const second_level = this.node.name
+                                let url;
+                                if(university != 'University of Tours' && first_level != 'University of Tours'){
+                                    if(university != '')
+                                        url = `./search-researchers?university_name=${university}&department=${first_level}&faculty=${second_level}`;
+                                    else
+                                        url = `./search-researchers?university_name=${first_level}&department=${second_level}`;
+                                    window.open(url, '_blank'); 
+                                } else {
+                                    if(university == ''){
+                                        url = `./search-researchers?university_name=${first_level}&department=${second_level}&one_level=true`;
+                                        window.open(url, '_blank');
+                                    } else {
+                                        url = `./search-researchers?university_name=${university}&department=${first_level}&faculty=${second_level}`;
+                                        window.open(url, '_blank');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         ],
         title: {
@@ -93,7 +122,7 @@ function TreeMap({chart_title, series}){
                     id: response_data[i].university_name,
                     name : response_data[i].university_name,
                     value : parseInt(response_data[i].num_submission),
-                    color: colors[i]
+                    color: colors[i],
                 }
                 by_uni.push(element)
             }
@@ -108,33 +137,35 @@ function TreeMap({chart_title, series}){
             }
             for(let i = 0; i<response_data3.length; i++){
                 if (response_data3[i].faculty !== ''){
-                    const faculty = response_data3[i].faculty.split('_')[0]
+                    const faculty = response_data3[i].faculty
                     const element = {
                         id: faculty,
                         name : faculty,
                         value : parseInt(response_data3[i].occurrences),
-                        parent : response_data3[i].department
+                        parent : response_data3[i].department,
                     }
                     by_uni.push(element)
                 }
             }
             for(let i = 0; i<research_area.length; i++){
                 const element = {
-                    id: research_area[i].research_units_tours.split('_')[0],
-                    name : research_area[i].research_units_tours.split('_')[0],
+                    id: research_area[i].research_units_tours,
+                    name : research_area[i].research_units_tours,
                     value : parseInt(research_area[i].occurrences),
                     parent : research_area[i].university_name
                 }
                 by_uni.push(element)
             }
             for(let i = 0; i<specific_research_units.length; i++){
-                const element = {
-                    id: specific_research_units[i].specific_research_units_tours,
-                    name : specific_research_units[i].specific_research_units_tours,
-                    value : parseInt(specific_research_units[i].occurrences),
-                    parent : specific_research_units[i].research_units_tours.split('_')[0]
+                if(specific_research_units[i].specific_research_units_tours){
+                    const element = {
+                        id: specific_research_units[i].specific_research_units_tours,
+                        name : specific_research_units[i].specific_research_units_tours,
+                        value : parseInt(specific_research_units[i].occurrences),
+                        parent : specific_research_units[i].research_units_tours
+                    }
+                    by_uni.push(element)
                 }
-                by_uni.push(element)
             }
             by_uni.sort((a, b) => {
                 if (a.name < b.name) return -1;

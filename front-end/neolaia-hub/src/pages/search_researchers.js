@@ -97,7 +97,6 @@ const SearchResearchers = () => {
           }
         ]
         response.data.map((item) => {
-          console.log(item)
           if(!item.personal_page_link.includes('http'))
             item.personal_page_link = <a href={`https://${item.personal_page_link}`} target="_blank">{item.personal_page_link}</a>
           else

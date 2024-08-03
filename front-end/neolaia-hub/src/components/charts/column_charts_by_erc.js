@@ -34,8 +34,17 @@ function create_options(chart_title,data){
                 borderWidth: 0
             },
             series: {
+                cursor: 'pointer',
                 dataLabels: {
                     enabled: true
+                },
+                point:{
+                    events: {
+                        click: function(){
+                            const url = `./search-researchers?erc_panel=${this.series.name}`;
+                            window.open(url, '_blank');
+                        }
+                    },
                 }
             }
         },

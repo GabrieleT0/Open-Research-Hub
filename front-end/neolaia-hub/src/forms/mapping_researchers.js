@@ -122,42 +122,6 @@ function MappingResearchers({token, data}){
             [department] : second_level, 
             "research_units_tours" : `${data.research_units_tours}`,
             [`${data.research_units_tours}`] : `${data.specific_research_units_tours}`,
-            /*
-            "free_keywords" : [
-                {"free_keyword" : data.free_keyword_1},
-                {"free_keyword" : data.free_keyword_2},
-                {"free_keyword" : data.free_keyword_3}],
-            "ERC_Panel" : [{
-                "Research-General-Area" : erc_area_1,
-                [erc_area_1] : data.ERC_Panel_1.replaceAll(' ','-'),
-                [data.ERC_Panel_1.replaceAll(' ','-')] : data.ERC_Keyword_1
-            },
-            {
-                "Research-General-Area" : erc_area_2,
-                [erc_area_2] : data.ERC_Panel_2.replaceAll(' ','-'),
-                [data.ERC_Panel_2.replaceAll(' ','-')] : data.ERC_Keyword_2
-            },
-            {
-                "Research-General-Area" : erc_area_3,
-                [erc_area_3] : data.ERC_Panel_3.replaceAll(' ','-'),
-                [data.ERC_Panel_3.replaceAll(' ','-')] : data.ERC_Keyword_3
-            }],
-            "ERC_panel_interested" : [{
-                "Research-General-Area" : erc_area_1_int,
-                [erc_area_1_int] : data.ERC_Panel_interested_1.replaceAll(' ','-'),
-                [data.ERC_Panel_interested_1.replaceAll(' ','-')] : data.ERC_Keyword_interested_1
-            },
-            {
-                "Research-General-Area" : erc_area_2_int,
-                [erc_area_2_int] : data.ERC_Panel_interested_2.replaceAll(' ','-'),
-                [data.ERC_Panel_interested_2.replaceAll(' ','-')] : data.ERC_Keyword_interested_2
-            },
-            {
-                "Research-General-Area" : erc_area_3_int,
-                [erc_area_3_int] : data.ERC_Panel_interested_3.replaceAll(' ','-'),
-                [data.ERC_Panel_interested_3.replaceAll(' ','-')] : data.ERC_Keyword_interested_3
-            }]
-                */
         }
 
         free_keywords = [];

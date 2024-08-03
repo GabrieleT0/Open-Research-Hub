@@ -20,6 +20,17 @@ function create_options(chart_title,data){
                     enabled: true,
                     format: '<b>{point.name}</b>: {point.y} '
                 }
+            },
+            series: {
+                cursor: 'pointer',
+                point:{
+                    events: {
+                        click: function(){
+                            const url = `./search-researchers?university_name=${this.name}`;
+                            window.open(url, '_blank');
+                        }
+                    },
+                }
             }
         },
         series: [

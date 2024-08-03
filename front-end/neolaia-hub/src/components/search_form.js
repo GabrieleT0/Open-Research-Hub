@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Form, Button, Container, Row, Col, Dropdown } from 'react-bootstrap';
 import universities_data from './search_components/universities.json'
 import panel_data from './search_components/erc_panel.json'
 import faculties_data from './search_components/faculties.json'
 import axios from 'axios';
 import { base_url } from '../api';
+import { useLocation } from 'react-router-dom';
+import { return_erc_area } from '../utils';
 
 
 const SearchForm = ({onSearch}) => {
@@ -36,6 +38,68 @@ const SearchForm = ({onSearch}) => {
     const [selectedKeywords, setSelectedKeywords] = useState([])
     const [researchUnitData, setResearchUnit] = useState([])
     const [specificUnitData, setSpecificUnit] = useState([])
+
+    const submit_button_ref = useRef(null)
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+
+    useEffect(() => {
+        if (queryParams.toString()){
+            let keyword = queryParams.get('keyword');
+            let university_name = queryParams.get('university_name')
+            let erc_panel = queryParams.get('erc_panel')
+            let first_level = queryParams.get('department')
+            let second_level = queryParams.get('faculty')
+            let one_level = queryParams.get('one_level')
+            if(keyword){
+                if(keyword.charAt(0) === '-'){
+                    keyword = keyword.replace('-','')
+                }
+                keyword = keyword.replace('-',' ')
+                setSelectedKeywords([keyword])
+            }
+            if(university_name){
+                formData.university = university_name
+            }
+            if(erc_panel){
+                let erc_area = return_erc_area(erc_panel)
+                formData.erc_area = erc_area
+                formData.erc_panel = erc_panel
+            }
+
+            if(university_name === 'University of Tours'){
+                if(one_level == true){
+                    formData.university = university_name
+                    formData.research_unit_tours = first_level
+                } else {
+                    if(universities_data[university_name].includes(first_level)){
+                        formData.department = first_level
+                        if(second_level)
+                            formData.faculty = second_level
+                    } else {
+                        formData.research_unit_tours = first_level
+                        if(second_level)
+                            formData.specific_unit_tours = second_level
+                    }
+                }
+            }
+
+            if(first_level && formData.research_unit_tours == ''){
+                formData.department = first_level
+            }
+
+            if(second_level && formData.specific_unit_tours == ''){
+                formData.faculty = second_level
+            }
+        }
+    }, [location.search])
+
+    useEffect(() => {
+        //Check if there are parameters in the pages
+        if (queryParams.toString()) {
+            submit_button_ref.current.click();  // Execute the form submit to get directly the result
+        }
+    }, []);
 
     const handleChange = (e) => {
         const {name , value} = e.target;
@@ -339,7 +403,7 @@ const SearchForm = ({onSearch}) => {
                         </Form.Group>
                     </Col>
                 </Row>
-                <Button  type='submit' id='search-sub'>Search</Button>
+                <Button  type='submit' id='search-sub' ref={submit_button_ref}>Search</Button>
                 <Button variant='danger' type='reset' id='reset-btn' style={{marginLeft: '10px'}} onClick={handleReset}>Resets all fields</Button>
             </Form>
         </Container>
