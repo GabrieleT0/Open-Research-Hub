@@ -222,3 +222,13 @@ background-color:#e83181;
 #dropdown-tags{
   background-color: #00b3e4;
 }
+
+.contact-info, .data-protection-info {
+  margin-top: 20px;
+}
+.contact-info p, .data-protection-info p {
+  margin: 5px 0;
+}
+.cookie-policy {
+  margin-top: 20px;
+}

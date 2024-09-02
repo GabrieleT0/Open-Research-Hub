@@ -5,6 +5,7 @@ import {token_is_valid, check_if_alredy_compiled} from "../utils"
 import MappingResearchers from "../forms/mapping_researchers";
 import PrivacyMessageResearchersMapping from "../components/privacy_policy_researchers_mapping"; 
 import AcceptPolicyMessage from "../components/accept_policy_message_researchers_mapping";
+import PrivacyPolicy from "../components/privacy_policy";
 import ModifyDeleteForm from "../components/modify_delete_modal";
 
 
@@ -46,7 +47,7 @@ function AuthenticatedForm(){
     return(
         <div>
             {loading && <p>Caricamento...</p>}
-            {(!token || !token_validity) && <Auth privacy_message={<PrivacyMessageResearchersMapping />} accept_policy_message={<AcceptPolicyMessage />} />}
+            {(!token || !token_validity) && <Auth privacy_message={<PrivacyMessageResearchersMapping />} accept_policy_message={<AcceptPolicyMessage />} privacy_policy={<PrivacyPolicy />} />}
             {token && form}
         </div>
     )
