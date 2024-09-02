@@ -124,20 +124,20 @@ function MappingResearchers({token, data}){
             [`${data.research_units_tours}`] : `${data.specific_research_units_tours}`,
         }
 
-        free_keywords = [];
+        let free_keywords_tofill = [];
         if (data.free_keyword_1) {
-            free_keywords.push({ "free_keyword": data.free_keyword_1 });
+            free_keywords_tofill.push({ "free_keyword": data.free_keyword_1 });
         }
         
         if (data.free_keyword_2) {
-            free_keywords.push({ "free_keyword": data.free_keyword_2 });
+            free_keywords_tofill.push({ "free_keyword": data.free_keyword_2 });
         }
         
         if (data.free_keyword_3) {
-            free_keywords.push({ "free_keyword": data.free_keyword_3 });
+            free_keywords_tofill.push({ "free_keyword": data.free_keyword_3 });
         }
 
-        research_survey.mergeData({'free_keywords' : free_keywords})
+        research_survey.mergeData({'free_keywords' : free_keywords_tofill})
 
 
         let ERC_Panel = []
