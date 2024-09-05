@@ -109,7 +109,6 @@ const SearchResearchers = () => {
             item.orcid_link = <a href={`https://${item.orcid_link}`} target="_blank">{item.orcid_link}</a>
           else
             item.orcid_link = <a href={`${item.orcid_link}`} target="_blank">{item.orcid_link}</a>
-          
         })
         setResults(response.data);
         setColumns(columns_data);

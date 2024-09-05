@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const csvConfig = mkConfig({
+  filename: 'Researchers_result',
   fieldSeparator: ',',
   decimalSeparator: '.',
   useKeysAsHeaders: true,
@@ -25,6 +26,15 @@ const MaterialTable = ({columns_value, data_table}) => {
   const data = data_table;
 
     const handleExportData = () => {
+      data.map((row) => {
+        console.log(row)
+        if(typeof(row.orcid_link) !== 'string')
+          row.orcid_link = row.orcid_link.props.href
+        if(typeof(row.personal_page_link) !== 'string')
+          row.personal_page_link = row.personal_page_link.props.href
+        if(typeof(row.research_group_link) !== 'string')
+          row.research_group_link = row.research_group_link.props.href
+      })
     const csv = generateCsv(csvConfig)(data);
     download(csvConfig)(csv);
   };
