@@ -69,29 +69,37 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
 
     async count_submission_by_erc_panel(ctx, next){
         let {rows : erc_panel_1} = await strapi.db.connection.raw( `
-            SELECT ERC_Panel_1, COUNT(*) as num_submission
+            SELECT ERC_Panel_1, ID, COUNT(*) as num_submission
             FROM research_info_surveys
-            GROUP BY ERC_Panel_1;
+            GROUP BY ERC_Panel_1, ID;
         `
         )
 
         let {rows : erc_panel_2} = await strapi.db.connection.raw( `
-            SELECT ERC_Panel_2, COUNT(*) as num_submission
+            SELECT ERC_Panel_2, ID, COUNT(*) as num_submission
             FROM research_info_surveys
-            GROUP BY ERC_Panel_2;
+            GROUP BY ERC_Panel_2, ID;
         `
         )
 
         let {rows : erc_panel_3} = await strapi.db.connection.raw( `
-            SELECT ERC_Panel_3, COUNT(*) as num_submission
+            SELECT ERC_Panel_3, ID, COUNT(*) as num_submission
             FROM research_info_surveys
-            GROUP BY ERC_Panel_3;
+            GROUP BY ERC_Panel_3, ID;
         `
         )
         let new_list = erc_panel_1.concat(erc_panel_2)
         new_list = new_list.concat(erc_panel_3)
-        
-        return new_list
+        const uniqueIds = new Set();
+        const filteredData = new_list.filter(item => {
+            if (!uniqueIds.has(item.id)) {
+                uniqueIds.add(item.id);
+                return true;
+            }
+            return false;
+        });
+
+        return filteredData
     },
 
     async get_free_keywords(ctx, next){
