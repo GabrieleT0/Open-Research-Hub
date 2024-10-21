@@ -228,7 +228,7 @@ function MappingResearchers({token, data}){
             xhr.onload = xhr.onerror = function () {
                 if (xhr.status === 200){
                     options.showSaveSuccess("Thank you.");
-                    research_survey.completedHtml = '<h3>Thank you, your information has been updated!</h3> <br> <a href="./researchers-dashboard"  style="color: white;">Go to the dashboard</a>'
+                    research_survey.completedHtml = '<h3>Thank you, your information has been updated!</h3> <br> <a href="./"  style="color: white;">Go to the dashboard</a>'
                 } else {
                     options.showSaveError("Error during updating, try again.")
                 }

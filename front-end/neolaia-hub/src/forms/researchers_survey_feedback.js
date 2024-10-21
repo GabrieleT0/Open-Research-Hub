@@ -17,7 +17,7 @@ function ResearchersFeedback(){
         xhr.onload = xhr.onerror = function () {
             if (xhr.status === 200){
                 options.showSaveSuccess("Thank you.");
-                researchers_feedback.completedHtml = '<h3>Thank you!</h3> <br> <a href="./researchers-dashboard"  style="color: white;">Go to the dashboard</a>'
+                researchers_feedback.completedHtml = '<h3>Thank you!</h3> <br> <a href="./"  style="color: white;">Go to the dashboard</a>'
             } else {
                 options.showSaveError("Error during survey submission, try again.")
             }
