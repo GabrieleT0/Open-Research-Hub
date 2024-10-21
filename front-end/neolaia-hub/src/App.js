@@ -12,15 +12,15 @@ import PrivacyPolicy from './pages/privacy_policy';
 
 function App() {
   return (
-      <Router basename='/surveys'>
+      <Router basename='/hub'>
         <Routes>
-          <Route basename={'/surveys'} path="/researchers" element={<AuthenticatedForm />}/>
-          <Route basename={'/surveys'} path="/researchersfeedback" element={<ResearchersFeedbackPage />} />
-          <Route basename={'/surveys'} path="/editresearcherdata" element={<EditResearcherPage />} />
-          <Route basename={'/surveys'} path='/researchers-dashboard' element={<ResearcherDash />} /> 
-          <Route basename={'/surveys'} path='/search-researchers' element={<SearchResearchers />} /> 
-          <Route basename={'/surveys'} path='/researcher-page' element={<ResearcherPage />} /> 
-          <Route basename={'/surveys'} path='researchers/privacy_policy' element={<PrivacyPolicy />} /> 
+          <Route basename={'/hub'} path='*' element={<ResearcherDash />} /> 
+          <Route basename={'/hub'} path="/participate" element={<AuthenticatedForm />}/>
+          <Route basename={'/hub'} path="/researchersfeedback" element={<ResearchersFeedbackPage />} />
+          <Route basename={'/hub'} path="/editresearcherdata" element={<EditResearcherPage />} />
+          <Route basename={'/hub'} path='/search-researchers' element={<SearchResearchers />} /> 
+          <Route basename={'/hub'} path='/researcher-page' element={<ResearcherPage />} /> 
+          <Route basename={'/hub'} path='researchers/privacy_policy' element={<PrivacyPolicy />} /> 
         </Routes>
       </Router>
   );
