@@ -10,7 +10,7 @@ function create_options(chart_title,data){
             type: 'column'
         },
         title: {
-            text: 'Total number of submission by ERC panel'
+            text: 'Number of occurrences of the ERC panels'
         },
         xAxis: {
             labels: {
