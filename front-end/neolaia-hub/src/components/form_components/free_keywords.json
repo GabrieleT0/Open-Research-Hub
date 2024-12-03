@@ -27,7 +27,7 @@
         ],
         "panelCount": 1,
         "minPanelCount": 1,
-        "maxPanelCount": 3,
+        "maxPanelCount": 10,
         "panelAddText": "Add a new free keyword"
        }
       ]

@@ -884,6 +884,13 @@ export interface ApiResearchInfoSurveyResearchInfoSurvey
     personal_page_link: Attribute.String;
     research_units_tours: Attribute.String;
     specific_research_units_tours: Attribute.Text;
+    free_keyword_4: Attribute.String;
+    free_keyword_5: Attribute.String;
+    free_keyword_6: Attribute.String;
+    free_keyword_7: Attribute.String;
+    free_keyword_8: Attribute.String;
+    free_keyword_9: Attribute.String;
+    free_keyword_10: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

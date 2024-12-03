@@ -95,6 +95,27 @@
     },
     "specific_research_units_tours": {
       "type": "text"
+    },
+    "free_keyword_4": {
+      "type": "string"
+    },
+    "free_keyword_5": {
+      "type": "string"
+    },
+    "free_keyword_6": {
+      "type": "string"
+    },
+    "free_keyword_7": {
+      "type": "string"
+    },
+    "free_keyword_8": {
+      "type": "string"
+    },
+    "free_keyword_9": {
+      "type": "string"
+    },
+    "free_keyword_10": {
+      "type": "string"
     }
   }
 }
