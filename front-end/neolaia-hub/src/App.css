@@ -202,6 +202,34 @@ background-color:#e83181;
   background-color: #e4736e !important;
 }
 
+#pill4 {
+  background-color: #f2c94c !important; /* Giallo caldo */
+}
+
+#pill5 {
+  background-color: #8e44ad !important; /* Viola acceso */
+}
+
+#pill6 {
+  background-color: #2d9cdb !important; /* Blu brillante */
+}
+
+#pill7 {
+  background-color: #27ae60 !important; /* Verde profondo */
+}
+
+#pill8 {
+  background-color: #eb5757 !important; /* Rosso acceso */
+}
+
+#pill9 {
+  background-color: #56ccf2 !important; /* Azzurro tenue */
+}
+
+#pill10 {
+  background-color: #bb6bd9 !important; /* Viola chiaro */
+}
+
 #search-sub{
   background-color: #ed6b1d;
   border-color: white;

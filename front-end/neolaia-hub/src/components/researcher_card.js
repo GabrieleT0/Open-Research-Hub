@@ -6,7 +6,7 @@ import Stack from 'react-bootstrap/Stack';
 
 function ResearcherCard({ card_data }) {
     const [activeTab, setActiveTab] = useState('#personal');
-
+    console.log(card_data)
     if(card_data.personal_page_link){
         if(!card_data.personal_page_link.includes('http'))
             card_data.personal_page_link = `https://${card_data.personal_page_link}`
@@ -176,21 +176,22 @@ function ResearcherCard({ card_data }) {
                         <Card.Title as={"h4"} style={{marginBottom : '15px'}}> <b>Free keywords inserted </b></Card.Title>
                         <Card.Text as={"h5"}>
                         <Stack direction="horizontal" gap={2}>
-                            {card_data.free_keyword_1 && (
-                                <Badge pill bg="primary" id='pill1' style={{ fontSize: '0.9rem', padding: '0.5rem 1rem' }} >
-                                  {card_data.free_keyword_1}
-                                </Badge>
-                            )}
-                            {card_data.free_keyword_2 && (
-                                <Badge pill bg="primary" id='pill2' style={{ fontSize: '0.9rem', padding: '0.5rem 1rem' }}>
-                                  {card_data.free_keyword_2}
-                                </Badge>
-                            )}
-                            {card_data.free_keyword_3 && (
-                                <Badge pill bg="primary" id='pill3' style={{ fontSize: '0.9rem', padding: '0.5rem 1rem'}}>
-                                  {card_data.free_keyword_3}
-                                </Badge>
-                            )}
+                        {Array.from({ length: 10 }, (_, i) => i + 1).map(index => {
+                            const keyword = card_data[`free_keyword_${index}`];
+                            return (
+                                keyword && (
+                                    <Badge
+                                        key={`pill${index}`}
+                                        pill
+                                        bg="primary"
+                                        id={`pill${index}`}
+                                        style={{ fontSize: '0.9rem', padding: '0.5rem 1rem' }}
+                                    >
+                                        {keyword}
+                                    </Badge>
+                                )
+                            );
+                        })}
                             </Stack>
                         </Card.Text>
                     </>
