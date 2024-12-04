@@ -24,8 +24,8 @@ function ResearcherDash(){
                 <Row>
                     <Col md={12} className='text-center'>
                         <h5 id='welcome-text'>
-                            Welcome to the Open Research Hub. We are asking to contribute to the mapping of Research in NEOLAiA providing information that will be openly accessible (with license CC-BY-SA) within and outside NEOLAiA to foster networking and stimulate collaboration. 
-                            This is only an early prototype that we are testing, and you will be also asked to fill in a very short feedback form. In case you need support, please write to <a href='mailto:neolaiasurvey-support-list@unisa.it'>neolaiasurvey-support-list@unisa.it</a>
+                            Welcome to NEOLAiA Open Research Hub! We are kindly asking you to contribute to the Research Hub by voluntarily providing information that will be openly accessible (with license CC-BY-SA) within and outside NEOLAiA to foster networking and stimulate collaboration. 
+                            If you need support, please write to <a href='mailto:neolaiaresearchhub-support-list@unisa.it'>neolaiaresearchhub-support-list@unisa.it</a>
                         </h5>
                         <Button as={Link} to="/participate" id='start-btn'>Participate</Button>
                         <Button variant='secondary' as={Link} to="/search-researchers" id='search-btn'>Search</Button>
