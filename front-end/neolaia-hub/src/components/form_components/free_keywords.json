@@ -17,7 +17,7 @@
           "type": "text",
           "name": "free_keyword",
           "title": "Free keyword",
-          "description": "Enter only one keyword for each textbox. Click on \"add a new free keyword\" to add another one.",
+          "description": "Enter only one keyword for each textbox. Click on \"add a new free keyword\" to add another one.  \n - It is possible to use blanks.\n - Please do not put more keyword in one line as we will build word clouds of them and that will make it unreadable",
           "maxLength": 20,
           "choicesByUrl": {
             "url": "https://data.neolaiacampus.eu/strapi/api/research-info-surveys/search_keywords/",
