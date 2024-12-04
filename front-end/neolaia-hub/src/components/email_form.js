@@ -38,32 +38,41 @@ const EmailForm = ( {onNext, privacy_policy, accept_policy_message, policy_mess
     return (
         <form onSubmit={handle_submit} id='email-form'>
             {privacy_policy}
-            <label style={{marginLeft : "10px"}}>
-                <input 
-                    type="checkbox" 
-                    checked={isPolicyAccepted} 
-                    onChange={(e) => setIsPolicyAccepted(e.target.checked)} 
-                />
-                {accept_policy_message}
-                <br/>
-                {policyMessage && policyMessage}
-            </label> <br/>
-            <label style={{marginLeft : "10px"}}>
-                <input 
-                    type="checkbox" 
-                    checked={isSecondPolicyAccepted} 
-                    onChange={(e) => setIsSecondPolicyAccepted(e.target.checked)} 
-                />
-                {policy_message}
-                <br/>
-                {secondPolicyMessage && secondPolicyMessage}
-            </label> <br/> <br/>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Insert your email' id='input-mail'/>
-            <br/><br/>
-            {!isValid && <><span style={{color:"red"}}>Invalid e-mail</span><br></br></>}
+            <div style={{ textAlign: "left", marginLeft: "20px"}}>
+                <label style={{ display: "block", marginBottom: "10px" }}>
+                    <input
+                        type="checkbox"
+                        checked={isPolicyAccepted}
+                        onChange={(e) => setIsPolicyAccepted(e.target.checked)}
+                    />
+                    {accept_policy_message}
+                </label>
+                {policyMessage && <div>{policyMessage}</div>}
+
+                <label style={{ display: "block", marginBottom: "10px" }}>
+                    <input
+                        type="checkbox"
+                        checked={isSecondPolicyAccepted}
+                        onChange={(e) => setIsSecondPolicyAccepted(e.target.checked)}
+                    />
+                    {policy_message}
+                </label>
+                {secondPolicyMessage && <div>{secondPolicyMessage}</div>}
+            </div>
+            <br />
+            <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder='Insert your email'
+                id='input-mail'
+                style={{ margin: "10px 0" }}
+            />
+            <br/>
+            {!isValid && <><span style={{ color: "red" }}>Invalid e-mail</span><br /></>}
             <button type="submit" id='send-otp-btn'>Send me the OTP</button>
-      </form>
-    )
-}
+        </form>
+    );
+};
 
 export default EmailForm;
