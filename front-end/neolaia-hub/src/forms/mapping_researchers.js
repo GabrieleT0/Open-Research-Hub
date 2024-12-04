@@ -21,7 +21,8 @@ erc_panel_interest.pages[0].elements[0].title = 'Indicate at most 3 ERC Panel an
 //To solve question already answered from the research are panel, rename all key 
 erc_panel_interest.name = 'erc_panel_research_area_interested'
 erc_panel_interest.pages[0].name= 'interested_research_area'
-erc_panel_interest.pages[0].title= 'ERC panel (Research areas in which you are interested)'
+erc_panel_interest.pages[0].title= 'Other research areas of possible interest (ERC Panels and keywords)'
+erc_panel_interest.pages[0].description = 'Areas in which I apply my research (for example, I do research in statistics and apply my research in economics).'
 erc_panel_interest.pages[0].elements[0].name = 'ERC_panel_interested'
 erc_panel_interest.pages[0].elements[0].isRequired = false
 erc_panel_interest.pages[0].elements[0].templateElements[0].isRequired = false
