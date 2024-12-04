@@ -189,6 +189,7 @@ function MappingResearchers({token, data}){
         }
 
         research_survey.mergeData({'ERC_panel_interested' : ERC_panel_interested})
+        research_survey["showPreviewBeforeComplete"] = 'showAllQuestions'
     }
 
 
