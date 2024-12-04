@@ -34,6 +34,20 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
             SELECT free_keyword_2 AS matched_keyword FROM research_info_surveys
             UNION ALL
             SELECT free_keyword_3 AS matched_keyword FROM research_info_surveys
+            UNION ALL
+            SELECT free_keyword_4 AS matched_keyword FROM research_info_surveys
+            UNION ALL
+            SELECT free_keyword_5 AS matched_keyword FROM research_info_surveys
+            UNION ALL
+            SELECT free_keyword_6 AS matched_keyword FROM research_info_surveys
+            UNION ALL
+            SELECT free_keyword_7 AS matched_keyword FROM research_info_surveys
+            UNION ALL
+            SELECT free_keyword_8 AS matched_keyword FROM research_info_surveys
+            UNION ALL
+            SELECT free_keyword_9 AS matched_keyword FROM research_info_surveys
+            UNION ALL
+            SELECT free_keyword_10 AS matched_keyword FROM research_info_surveys
         ) AS keywords
         WHERE matched_keyword IS NOT NULL AND matched_keyword <> ''
         GROUP BY matched_keyword;
@@ -41,8 +55,7 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
         )
         for(let i = 0; i<rows.length; i++){
             rows[i]['display_value'] = rows[i]['matched_keyword'] + ' (' + rows[i]['occurrences'] + ')'
-        }
-            
+        }  
         return rows
     },
 
@@ -107,29 +120,22 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
     },
 
     async get_free_keywords(ctx, next){
-        let {rows : free_keyword_1} = await strapi.db.connection.raw(`
-            SELECT free_keyword_1
-            FROM research_info_surveys
-        `)
+        let new_list = [];
 
-        let {rows : free_keyword_2} = await strapi.db.connection.raw(`
-            SELECT free_keyword_2
-            FROM research_info_surveys
-        `)
-
-        let {rows : free_keyword_3} = await strapi.db.connection.raw(`
-            SELECT free_keyword_3
-            FROM research_info_surveys
-        `)
-        
-        let new_list = free_keyword_1.concat(free_keyword_2)
-        new_list = new_list.concat(free_keyword_3)
-
+        for (let i = 1; i <= 10; i++) {
+            const query = `
+                SELECT free_keyword_${i}
+                FROM research_info_surveys
+            `;
+            let { rows } = await strapi.db.connection.raw(query);
+            new_list = new_list.concat(rows);
+        }
+    
         const values = new_list.map(obj => {
             return Object.values(obj)[0];
-        })
+        });
 
-        return values
+        return values;
     },
 
     async count_by_departmens(ctx, next){
