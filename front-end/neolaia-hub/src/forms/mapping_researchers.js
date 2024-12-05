@@ -36,7 +36,8 @@ personal_info.pages.push(free_keywords.pages[0])
 function MappingResearchers({token, data}){
     const research_survey = new Model(personal_info)
     research_survey.applyTheme(survey_theme)
-
+    research_survey["showPreviewBeforeComplete"] = 'showAllQuestions'
+    
     const pageColors = [
         "#e83181", 
         "#fdc200", 
@@ -218,7 +219,6 @@ function MappingResearchers({token, data}){
         }
 
         research_survey.mergeData({'ERC_panel_interested' : ERC_panel_interested})
-        research_survey["showPreviewBeforeComplete"] = 'showAllQuestions'
     }
 
 
@@ -237,16 +237,16 @@ function MappingResearchers({token, data}){
                 if (xhr.status === 200){
                     options.showSaveSuccess("Data successfully saved");
                     research_survey.completedHtml = '\
-                    <h3> Grazie! </h3> <br> \
-                    <h3> Danke! </h3> <br> \
-                    <h3> ¡Gracias! </h3> <br> \
-                    <h3> Ευχαριστώ! </h3> <br> \
-                    <h3> Tack! </hr> <br> \
-                    <h3> Děkuji! </hr> <br> \
-                    <h3> Mulțumesc! </hr> <br> \
-                    <h3> Merci! </hr> <br> \
-                    <h3> Ačiū! </hr> <br> \
-                    <a href="./"  style="color: white;">Go to the dashboard</a>'
+                        <h3> Grazie! </h3>\
+                        <h3> Danke! </h3> \
+                        <h3> ¡Gracias! </h3>\
+                        <h3> Ευχαριστώ! </h3> \
+                        <h3> Tack! </h3> \
+                        <h3> Děkuji! </h3> \
+                        <h3> Mulțumesc! </h3> \
+                        <h3> Merci! </h3> \
+                        <h3> Ačiū! </h3> <br> \
+                        <a href="./"  style="color: white;">Go to the dashboard</a>'
                 } else {
                     options.showSaveError("Error during survey submission, try again.")
                 }
