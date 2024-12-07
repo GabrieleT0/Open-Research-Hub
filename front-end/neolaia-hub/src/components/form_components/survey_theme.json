@@ -83,7 +83,7 @@
         "--sjs-article-font-default-lineHeight": "28px",
         "--sjs-article-font-default-paragraphIndent": "0px",
         "--sjs-article-font-default-textCase": "none",
-        "--sjs-general-backcolor-dim": "#11b3e3",
+        "--sjs-general-backcolor-dim": "#e83181",
         "--sjs-primary-backcolor": "rgba(237, 107, 28, 1)",
         "--sjs-primary-backcolor-dark": "rgba(222, 100, 26, 1)",
         "--sjs-primary-backcolor-light": "rgba(237, 107, 28, 0.1)",
