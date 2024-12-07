@@ -255,7 +255,14 @@ module.exports = createCoreController('api::research-info-survey.research-info-s
                     $or: [
                         { free_keyword_1: { $containsi: keyword } },
                         { free_keyword_2: { $containsi: keyword } },
-                        { free_keyword_3: { $containsi: keyword } }
+                        { free_keyword_3: { $containsi: keyword } },
+                        { free_keyword_4: { $containsi: keyword } },
+                        { free_keyword_5: { $containsi: keyword } },
+                        { free_keyword_6: { $containsi: keyword } },
+                        { free_keyword_7: { $containsi: keyword } },
+                        { free_keyword_8: { $containsi: keyword } },
+                        { free_keyword_9: { $containsi: keyword } },
+                        { free_keyword_10: { $containsi: keyword } }
                     ]
                 }))
             });
