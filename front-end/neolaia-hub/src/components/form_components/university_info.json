@@ -529,8 +529,8 @@
               "text": "Faculty of Mechanical Engineering, Automotive, and Robotics"
             },
             {
-              "value": "Faculty of History and Geography_Suceava",
-              "text": "Faculty of History and Geography"
+              "value": "Faculty of History, Geography and Social Sciences_Suceava",
+              "text": "Faculty of History, Geography and Social Sciences"
             },
             {
               "value": "Faculty of Letters and Communication Sciences_Suceava",
@@ -617,8 +617,8 @@
         },
         {
           "type": "dropdown",
-          "name": "Faculty of History and Geography_Suceava",
-          "visibleIf": "{Ştefan cel Mare University of Suceava} = 'Faculty of History and Geography_Suceava'",
+          "name": "Faculty of History, Geography and Social Sciences_Suceava",
+          "visibleIf": "{Ştefan cel Mare University of Suceava} = 'Faculty of History, Geography and Social Sciences_Suceava'",
           "title": "Select your department/research center",
           "isRequired": true,
           "choices": [
