@@ -57,7 +57,7 @@ function CloudWords({chart_title, series}){
             for(let i = 0; i<response_data.length; i++){
                 if(response_data[i]){
                     response_data[i] = response_data[i].replace(/ /g,'_')
-                    text += ` ${response_data[i]}`
+                    text += ` ${response_data[i].toLowerCase()}`
                 }
             }
             let lines = text.replace(/[():'?0-9]+/g, '').split(/[\. ]+/g),
