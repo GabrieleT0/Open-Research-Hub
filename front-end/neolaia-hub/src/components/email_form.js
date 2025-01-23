@@ -69,7 +69,27 @@ const EmailForm = ( {onNext, privacy_policy, accept_policy_message, policy_mess
                 style={{ margin: "10px 0" }}
             />
             <br/>
-            {!isValid && <><span style={{ color: "red" }}>Invalid e-mail</span><br /></>}
+            {!isValid && (
+            <>
+                <span style={{ color: "red", textAlign: "center", display: "block" }}>
+                Invalid e-mail. Use their university's institutional email. The accepted domains are as follows:
+                </span>
+                <ul style={{ textAlign: "left", margin: "0 auto", width: "fit-content",color: "red" }}>
+                <li>osu.cz</li>
+                <li>usv.ro</li>
+                <li>usm.ro</li>
+                <li>unic.ac.cy</li>
+                <li>oru.se</li>
+                <li>svako.lt</li>
+                <li>ujaen.es</li>
+                <li>univ-tours.fr</li>
+                <li>uni-bielefeld.de</li>
+                <li>unisa.it</li>
+                <li>osu.eu</li>
+                </ul>
+                <br />
+            </>
+            )}
             <button type="submit" id='send-otp-btn'>Send me the OTP</button>
         </form>
     );
