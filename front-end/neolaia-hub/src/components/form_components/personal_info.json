@@ -30,7 +30,7 @@
             {
               "type": "regex",
               "text": "The page address must come from one of neolaia's partner university domains",
-              "regex": "\\b(?:[A-Za-z0-9.-]+\\.)?(osu\\.cz|usm\\.ro|unic\\.ac\\.cy|oru\\.se|osu\\.eu|svako\\.lt|ujaen\\.es|univ-tours\\.fr|uni-bielefeld\\.de|unisa\\.it|usv\\.ro|cnrs\\.fr|inrae\\.fr|inserm\\.fr|univ-poitiers\\.fr|sphere-nantes\\.fr|mechlabgabriellame\\.fr|idpoisson\\.fr|leo-univ-orleans\\.fr|vallorem\\.fr|intru\\.hypotheses\\.org)\\b",
+              "regex": "\\b(?:[A-Za-z0-9.-]+\\.)?(osu\\.cz|usm\\.ro|unic\\.ac\\.cy|oru\\.se|osu\\.eu|svako\\.lt|ujaen\\.es|univ-tours\\.fr|uni-bielefeld\\.de|unisa\\.it|usv\\.ro|cnrs\\.fr|inrae\\.fr|inserm\\.fr|univ-poitiers\\.fr|sphere-nantes\\.fr|mechlabgabriellame\\.fr|idpoisson\\.fr|leo-univ-orleans\\.fr|vallorem\\.fr|intru\\.hypotheses\\.org|inrae\\.fr|cnrs\\.fr|inserm\\.fr)\\b",
               "caseInsensitive": true
             }
           ]

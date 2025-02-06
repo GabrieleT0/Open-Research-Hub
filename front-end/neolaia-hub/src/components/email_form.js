@@ -10,7 +10,7 @@ const EmailForm = ( {onNext, privacy_policy, accept_policy_message, policy_mess
 
     const handle_submit = (e) => {
         e.preventDefault();
-        const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usv\.ro|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it|osu\.eu)\b/;
+        const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usv\.ro|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it|osu\.eu|inrae\.fr|cnrs\.fr|inserm\.fr)\b/;
         if(isPolicyAccepted === false){
             const policy_error = <span style={{color:"red"}}>You must agree that your information will be published as OPEN DATA (except for the email address)</span>
             setPolicyMessage(policy_error)
@@ -86,6 +86,9 @@ const EmailForm = ( {onNext, privacy_policy, accept_policy_message, policy_mess
                 <li>uni-bielefeld.de</li>
                 <li>unisa.it</li>
                 <li>osu.eu</li>
+                <li>inrae.fr</li>
+                <li>cnrs.fr</li>
+                <li>inserm.fr</li>
                 </ul>
                 <br />
             </>
