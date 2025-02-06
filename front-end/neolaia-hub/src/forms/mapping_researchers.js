@@ -248,7 +248,16 @@ function MappingResearchers({token, data}){
                         <h3> Ačiū! </h3> <br> \
                         <a href="./"  style="color: white;">Go to the dashboard</a>'
                 } else {
-                    options.showSaveError("Error during survey submission, try again.")
+                    let errorMessage = `Error ${xhr.status}: ${xhr.statusText}`;
+                    if (xhr.responseText) {
+                        try {
+                            const errorData = JSON.parse(xhr.responseText);
+                            errorMessage += ` - ${errorData.message || errorData.error || "Unknown error"}`;
+                        } catch (e) {
+                            errorMessage += ` - ${xhr.responseText}`;
+                        }
+                    }
+                    options.showSaveError(`Error during survey submission: ${errorMessage}`);
                 }
             };
             const survey_data = JSON.stringify(sender.data)
@@ -275,7 +284,16 @@ function MappingResearchers({token, data}){
                         <h3> Ačiū! </h3> <br> \
                         <a href="./"  style="color: white;">Go to the dashboard</a>'
                 } else {
-                    options.showSaveError("Error during updating, try again.")
+                    let errorMessage = `Error ${xhr.status}: ${xhr.statusText}`;
+                    if (xhr.responseText) {
+                        try {
+                            const errorData = JSON.parse(xhr.responseText);
+                            errorMessage += ` - ${errorData.message || errorData.error || "Unknown error"}`;
+                        } catch (e) {
+                            errorMessage += ` - ${xhr.responseText}`;
+                        }
+                    }
+                    options.showSaveError(`Error during updating: ${errorMessage}`);
                 }
             };
             const survey_data = JSON.stringify(sender.data)

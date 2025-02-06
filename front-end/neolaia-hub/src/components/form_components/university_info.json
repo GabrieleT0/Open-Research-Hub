@@ -16,7 +16,7 @@
           "isRequired": true,
           "choices": [
             "University of Salerno",
-            "University of Örebro",
+            "Örebro University",
             "Šiauliai State University of Applied Sciences",
             "University of Nicosia",
             "Ştefan cel Mare University of Suceava",
@@ -54,8 +54,8 @@
         },
         {
           "type": "dropdown",
-          "name": "University of Örebro",
-          "visibleIf": "{university_name} = 'University of Örebro'",
+          "name": "Örebro University",
+          "visibleIf": "{university_name} = 'Örebro University'",
           "title": "Select your Faculty",
           "isRequired": true,
           "choices": [
@@ -76,7 +76,7 @@
         {
           "type": "dropdown",
           "name": "Faculty of Business, Science and Engineering_Orebro",
-          "visibleIf": "{University of Örebro} = 'Faculty of Business, Science and Engineering_Orebro'",
+          "visibleIf": "{Örebro University} = 'Faculty of Business, Science and Engineering_Orebro'",
           "title": "Select your Schools",
           "isRequired": true,
           "choices": [
@@ -97,7 +97,7 @@
         {
           "type": "dropdown",
           "name": "Faculty of Humanities and Social Sciences_Orebro",
-          "visibleIf": "{University of Örebro} = 'Faculty of Humanities and Social Sciences_Orebro'",
+          "visibleIf": "{Örebro University} = 'Faculty of Humanities and Social Sciences_Orebro'",
           "title": "Select your Schools",
           "isRequired": true,
           "choices": [
@@ -109,7 +109,7 @@
         {
           "type": "dropdown",
           "name": "Faculty of Medicine and Health_Orebro",
-          "visibleIf": "{University of Örebro} = 'Faculty of Medicine and Health_Orebro'",
+          "visibleIf": "{Örebro University} = 'Faculty of Medicine and Health_Orebro'",
           "title": "Select your Schools",
           "isRequired": true,
           "choices": [
@@ -724,7 +724,7 @@
         },
         {
           "type": "dropdown",
-          "name": "University of Bielefeld",
+          "name": "Bielefeld University",
           "visibleIf": "{university_name} = 'Bielefeld University'",
           "title": "Select your faculty",
           "isRequired": true,
@@ -790,7 +790,7 @@
         {
           "type": "dropdown",
           "name": "Biology_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Biology_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Biology_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -803,7 +803,7 @@
         {
           "type": "dropdown",
           "name": "Business Administration and Economics_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Business Administration and Economics_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Business Administration and Economics_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -816,7 +816,7 @@
         {
           "type": "dropdown",
           "name": "Chemistry_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Chemistry_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Chemistry_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -827,7 +827,7 @@
         {
           "type": "dropdown",
           "name": "History and Philosophy and Theology_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'History and Philosophy and Theology_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'History and Philosophy and Theology_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -839,7 +839,7 @@
         {
           "type": "dropdown",
           "name": "Law_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Law_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Law_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -852,7 +852,7 @@
         {
           "type": "dropdown",
           "name": "Linguistics and Literary Studies_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Linguistics and Literary Studies_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Linguistics and Literary Studies_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -867,7 +867,7 @@
         {
           "type": "dropdown",
           "name": "Mathematics_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Mathematics_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Mathematics_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -878,7 +878,7 @@
         {
           "type": "dropdown",
           "name": "Medical School OWL_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Medical School OWL_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Medical School OWL_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -889,7 +889,7 @@
         {
           "type": "dropdown",
           "name": "Physics_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Physics_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Physics_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [
@@ -902,7 +902,7 @@
         {
           "type": "dropdown",
           "name": "Technology_Bielefeld",
-          "visibleIf": "{University of Bielefeld} = 'Technology_Bielefeld'",
+          "visibleIf": "{Bielefeld University} = 'Technology_Bielefeld'",
           "title": "Select your research unit",
           "isRequired": true,
           "choices": [

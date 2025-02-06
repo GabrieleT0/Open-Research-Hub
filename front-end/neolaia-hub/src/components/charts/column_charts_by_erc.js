@@ -3,6 +3,10 @@ import Highcharts from "highcharts";
 import HighchartsReact from 'highcharts-react-official';
 import axios from 'axios';
 import { base_url } from '../../api';
+import { Spinner, Alert } from 'react-bootstrap';
+import Boost from 'highcharts/modules/boost';
+
+Boost(Highcharts);
 
 function create_options(chart_title,data){
     const options = {
@@ -45,7 +49,12 @@ function create_options(chart_title,data){
                             window.open(url, '_blank');
                         }
                     },
-                }
+                },
+                boostThreshold: 10,
+                boosting: {
+                    useGPUTranslations: true,  
+                    usePreAllocated: true,    
+                },
             }
         },
         series: data
@@ -114,12 +123,22 @@ function ColumnChart({chart_title, series}){
     }
 
     useEffect(() => {
-        fetchData()
-        const intervalId = setInterval(() => {
-            fetchData()
-        }, 120000) //every 120 seconds
+         fetchData()
+    //     const intervalId = setInterval(() => {
+    //         fetchData()
+    //     }, 120000) //every 120 seconds
     }, []);
 
+    if (loading) {
+            return (
+                <div className="text-center">
+                    <Spinner animation="border" role="status" />
+                    <span> Loading chart ...</span>
+                </div>
+            );
+    }
+
+    if (error) return <Alert variant="danger">Error: {error}</Alert>;
 
     return (
     <HighchartsReact highcharts={Highcharts} options={create_options(chart_title,data)} />

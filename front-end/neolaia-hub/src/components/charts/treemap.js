@@ -3,6 +3,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from 'highcharts-react-official';
 import axios from 'axios';
 import { base_url } from '../../api';
+import { Spinner, Alert } from 'react-bootstrap';
 require('highcharts/modules/treemap.js')(Highcharts);
 
 function create_options(chart_title,data){
@@ -83,7 +84,7 @@ function create_options(chart_title,data){
                             }
                         }
                     }
-                }
+                },
             }
         ],
         title: {
@@ -182,12 +183,22 @@ function TreeMap({chart_title, series}){
     }
 
     useEffect(() => {
-        fetchData()
-        const intervalId = setInterval(() => {
-            fetchData()
-        }, 120000) //every 120 seconds
-    }, []);
+         fetchData()
+    //     const intervalId = setInterval(() => {
+    //         fetchData()
+    //     }, 120000) //every 120 seconds
+     }, []);
 
+    if (loading) {
+        return (
+            <div className="text-center">
+                <Spinner animation="border" role="status" />
+                <span> Loading chart ...</span>
+            </div>
+        );
+    }
+
+    if (error) return <Alert variant="danger">Error: {error}</Alert>;
 
     return (
         <div style={{ height: '500px' }}>
