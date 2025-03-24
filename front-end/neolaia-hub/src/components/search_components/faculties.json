@@ -611,5 +611,77 @@
         "Cultures of religious and political pluralism: conflicts and concords",
         "Arts in the Renaissance: corpora, methods and influences",
         "Other or several"
+    ],
+
+    "Faculty of Technical Systems and Energy Efficient Technologies" : [
+        "Department of Technical Thermophysics",
+        "Department of Ecology and Environmental Technologies",
+        "Department of Applied Hydro-Aeromechanics",
+        "Department of Chemical Engineering",
+        "Department of Applied Materials Science and Technology of Structural Materials",
+        "Department of Mechanical Engineering, Machine Tools and Instruments Technology",
+        "Department of Theoretical and Applied Chemistry",
+        "Department of Computer Mechanics named after Volodymyr Marcinkovsky"
+    ],
+
+    "Educational and Scientific Medical Institute" : [
+        "Department of Morphology",
+        "Department of Pathological Anatomy",
+        "Department of Physiology and Pathophysiology with a course in Medical Biology",
+        "Department of Oncology and Radiology",
+        "Department of Biophysics, Biochemistry, Pharmacology and Biomolecular Engineering",
+        "Department of Obstetrics, Gynecology and Family Planning",
+        "Department of Infectious Diseases with Epidemiology",
+        "Department of Surgery, Traumatology, Orthopedics and Phthisiology",
+        "Department of Neurosurgery and Neurology with courses in psychiatry, narcology, medical psychology, and occupational diseases",
+        "Department of Public Health",
+        "Department of Dentistry",
+        "Department of Emergency Medical Care and Disaster Medicine",
+        "Department of Physical Education and Sports",
+        "Department of Physical Therapy, Occupational Therapy and Sports Medicine",
+        "Faculty of Postgraduate Medical Education"
+    ],
+
+    "Educational and Scientific Institute of Law" : [
+        "Department of Administrative, Commercial Law and Financial and Economic Security",
+        "Department of Criminal Law and Judicial Procedure",
+        "Department of Fundamental Jurisprudence and Constitutional Law",
+        "Department of International, European Law and Comparative Law",
+        "Department of History"
+    ],
+
+    "Faculty of Foreign Philology and Social Communications" : [
+        "Department of Foreign Languages ​​and Linguistics",
+        "Department of Journalism and Philology",
+        "Department of Germanic Philology",
+        "Department of Psychology, Political Science and Sociocultural Technologies"
+    ],
+
+    "Educational and Scientific Institute of Business, Economics and Management" : [
+        "Department of Economics, Entrepreneurship and Business Administration",
+        "Department of International Economic Relations",
+        "Department of Economic Cybernetics",
+        "Oleg Balatsky Department of Management",
+        "Department of Financial Technology and Entrepreneurship",
+        "Department of Marketing",
+        "Department of Accounting and Taxation"
+    ],
+
+    "Faculty of Electronics and Information Technologies" : [
+        "Department of Computer Science",
+        "Department of Applied Mathematics and Modeling of Complex Systems",
+        "Department of Electronics, General and Applied Physics",
+        "Department of Electronics and Computer Engineering",
+        "Department of Electrical Power Engineering",
+        "Department of Mathematical Analysis and Optimization Methods",
+        "Department of Cybersecurity",
+        "Department of Information Technology",
+        "Department of Computerized Control Systems"
+    ],
+
+    "Departments and services for supporting scientific activities": [
+        "Scientific and research part",
+        "Center for Scientific, Technical and Economic Information",
+        "Department for the organization of students' scientific work"
     ]
 }

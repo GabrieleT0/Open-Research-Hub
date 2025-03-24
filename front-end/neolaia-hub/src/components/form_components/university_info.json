@@ -23,7 +23,107 @@
             "University of Tours",
             "Bielefeld University",
             "University of Jaén",
-            "University of Ostrava"
+            "University of Ostrava",
+            "Sumy State University"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Sumy State University",
+          "visibleIf": "{university_name} = 'Sumy State University'",
+          "title": "Select the first level structure (i.e. Faculty)",
+          "choices": [
+            "Academic Council",
+            "Departments and services for supporting scientific activities",
+            "International Affairs Department",
+            "Sumy State University Library",
+            "Faculty of Technical Systems and Energy Efficient Technologies",
+            "Faculty of Electronics and Information Technologies",
+            "Educational and Scientific Institute of Business, Economics and Management",
+            "Faculty of Foreign Philology and Social Communications",
+            "Educational and Scientific Institute of Law",
+            "Educational and Scientific Medical Institute",
+            "Shostka Institute of Sumy State University",
+            "Shostkin Professional College named after Ivan Kozhedub of Sumy State University",
+            "Classical professional college of Sumy State University",
+            "Konotop Industrial and Pedagogical College of Sumy State University",
+            "Mechanical engineering college of Sumy State University"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Educational and Scientific Medical Institute",
+          "visibleIf": "{Sumy State University} = 'Educational and Scientific Medical Institute'",
+          "choices": [
+            "Department of Morphology",
+            "Department of Pathological Anatomy",
+            "Department of Physiology and Pathophysiology with a course in Medical Biology",
+            "Department of Oncology and Radiology",
+            "Department of Biophysics, Biochemistry, Pharmacology and Biomolecular Engineering",
+            "Department of Obstetrics, Gynecology and Family Planning",
+            "Department of Infectious Diseases with Epidemiology",
+            "Department of Surgery, Traumatology, Orthopedics and Phthisiology",
+            "Department of Neurosurgery and Neurology with courses in psychiatry, narcology, medical psychology, and occupational diseases",
+            "Department of Public Health",
+            "Department of Dentistry",
+            "Department of Emergency Medical Care and Disaster Medicine",
+            "Department of Physical Education and Sports",
+            "Department of Physical Therapy, Occupational Therapy and Sports Medicine",
+            "Faculty of Postgraduate Medical Education"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Educational and Scientific Institute of Law",
+          "visibleIf": "{Sumy State University} = 'Educational and Scientific Institute of Law'",
+          "choices": [
+            "Department of Administrative, Commercial Law and Financial and Economic Security",
+            "Department of Criminal Law and Judicial Procedure",
+            "Department of Fundamental Jurisprudence and Constitutional Law",
+            "Department of International, European Law and Comparative Law",
+            "Department of History"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Foreign Philology and Social Communications",
+          "visibleIf": "{Sumy State University} = 'Faculty of Foreign Philology and Social Communications'",
+          "choices": [
+            "Department of Foreign Languages ​​and Linguistics",
+            "Department of Journalism and Philology",
+            "Department of Germanic Philology",
+            "Department of Psychology, Political Science and Sociocultural Technologies"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Educational and Scientific Institute of Business, Economics and Management",
+          "visibleIf": "{Sumy State University} = 'Educational and Scientific Institute of Business, Economics and Management'",
+          "choices": [
+            "Department of Economics, Entrepreneurship and Business Administration",
+            "Department of International Economic Relations",
+            "Department of Economic Cybernetics",
+            "Oleg Balatsky Department of Management",
+            "Department of Financial Technology and Entrepreneurship",
+            "Department of Marketing",
+            "Department of Accounting and Taxation"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Electronics and Information Technologies",
+          "visibleIf": "{Sumy State University} = 'Faculty of Electronics and Information Technologies'",
+          "title": "Faculty of Electronics and Information Technologies",
+          "choices": [
+            "Department of Computer Science",
+            "Department of Applied Mathematics and Modeling of Complex Systems",
+            "Department of Electronics, General and Applied Physics",
+            "Department of Electronics and Computer Engineering",
+            "Department of Electrical Power Engineering",
+            "Department of Mathematical Analysis and Optimization Methods",
+            "Department of Cybersecurity",
+            "Department of Information Technology",
+            "Department of Computerized Control Systems"
           ]
         },
         {
@@ -54,6 +154,32 @@
         },
         {
           "type": "dropdown",
+          "name": "Faculty of Technical Systems and Energy Efficient Technologies",
+          "visibleIf": "{Sumy State University} = 'Faculty of Technical Systems and Energy Efficient Technologies'",
+          "choices": [
+            "Department of Technical Thermophysics",
+            "Department of Ecology and Environmental Technologies",
+            "Department of Applied Hydro-Aeromechanics",
+            "Department of Chemical Engineering",
+            "Department of Applied Materials Science and Technology of Structural Materials",
+            "Department of Mechanical Engineering, Machine Tools and Instruments Technology",
+            "Department of Theoretical and Applied Chemistry",
+            "Department of Computer Mechanics named after Volodymyr Marcinkovsky"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Departments and services for supporting scientific activities",
+          "visibleIf": "{Sumy State University} = 'Departments and services for supporting scientific activities'",
+          "title": "Select the second level structure (i.e. Department)",
+          "choices": [
+            "Scientific and research part",
+            "Center for Scientific, Technical and Economic Information",
+            "Department for the organization of students' scientific work"
+          ]
+        },
+        {
+          "type": "dropdown",
           "name": "Örebro University",
           "visibleIf": "{university_name} = 'Örebro University'",
           "title": "Select your Faculty",
@@ -71,6 +197,15 @@
               "value": "Faculty of Medicine and Health_Orebro",
               "text": "Faculty of Medicine and Health"
             }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Sumy State University Library",
+          "visibleIf": "{Sumy State University} = 'Sumy State University Library'",
+          "choices": [
+            "Computer Technology Center",
+            "Organizational and Methodological Center for E-Learning Technologies"
           ]
         },
         {
@@ -557,8 +692,7 @@
               "text": "Faculty of Medicine and Biological Sciences"
             }
           ]
-        },     
-
+        },
         {
           "type": "dropdown",
           "name": "Faculty of Law and Administrative Sciences_Suceava",

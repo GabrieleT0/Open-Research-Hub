@@ -8,7 +8,8 @@
       "University of Tours",
       "Bielefeld University",
       "University of Jaén",
-      "University of Ostrava"
+      "University of Ostrava",
+      "Sumy State University"
     ],
     "University of Salerno" : [
       "Department of Chemistry and Biology \"Adolfo Zambelli\"/DCB",
@@ -109,5 +110,22 @@
       "Faculty of Medicine",
       "Faculty of Science",
       "Centre of Excellence IT4Innovations   Institute for Research and Applications of Fuzzy Modeling"
+    ],
+    "Sumy State University" : [
+      "Academic Council",
+      "Departments and services for supporting scientific activities",
+      "International Affairs Department",
+      "Sumy State University Library",
+      "Faculty of Technical Systems and Energy Efficient Technologies",
+      "Faculty of Electronics and Information Technologies",
+      "Educational and Scientific Institute of Business, Economics and Management",
+      "Faculty of Foreign Philology and Social Communications",
+      "Educational and Scientific Institute of Law",
+      "Educational and Scientific Medical Institute",
+      "Shostka Institute of Sumy State University",
+      "Shostkin Professional College named after Ivan Kozhedub of Sumy State University",
+      "Classical professional college of Sumy State University",
+      "Konotop Industrial and Pedagogical College of Sumy State University",
+      "Mechanical engineering college of Sumy State University"
     ]
   }
