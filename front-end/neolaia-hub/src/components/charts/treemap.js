@@ -118,56 +118,73 @@ function TreeMap({chart_title, series}){
             const research_area = response4.data
             const specific_research_units = response5.data
             let by_uni = []
-            for(let i = 0; i<response_data.length; i++){
-                const element = {
-                    id: response_data[i].university_name,
-                    name : response_data[i].university_name,
-                    value : parseInt(response_data[i].num_submission),
-                    color: colors[i],
-                }
-                by_uni.push(element)
+            const existingIds = new Set();
+            response_data.forEach((item, i) => {
+            const id = item.university_name;
+            existingIds.add(id);
+            by_uni.push({
+                id,
+                name: id,
+                value: parseInt(item.num_submission),
+                color: colors[i % colors.length],
+            });
+        });
+
+        response_data2.forEach((item) => {
+            const id = item.department;
+            const parent = item.university_name;
+            if (id !== parent && existingIds.has(parent)) {
+                existingIds.add(id);
+                by_uni.push({
+                    id,
+                    name: id,
+                    value: parseInt(item.occurrences),
+                    parent,
+                });
             }
-            for(let i = 0; i<response_data2.length; i++){
-                const element = {
-                    id: response_data2[i].department,
-                    name : response_data2[i].department,
-                    value : parseInt(response_data2[i].occurrences),
-                    parent : response_data2[i].university_name
-                }
-                by_uni.push(element)
+        });
+
+        response_data3.forEach((item) => {
+            const id = item.faculty;
+            const parent = item.department;
+            if (id && id !== parent && existingIds.has(parent)) {
+                existingIds.add(id);
+                by_uni.push({
+                    id,
+                    name: id,
+                    value: parseInt(item.occurrences),
+                    parent,
+                });
             }
-            for(let i = 0; i<response_data3.length; i++){
-                if (response_data3[i].faculty !== ''){
-                    const faculty = response_data3[i].faculty
-                    const element = {
-                        id: faculty,
-                        name : faculty,
-                        value : parseInt(response_data3[i].occurrences),
-                        parent : response_data3[i].department,
-                    }
-                    by_uni.push(element)
-                }
+        });
+
+        research_area.forEach((item) => {
+            const id = item.research_units_tours;
+            const parent = item.university_name;
+            if (id && id !== parent && existingIds.has(parent)) {
+                existingIds.add(id);
+                by_uni.push({
+                    id,
+                    name: id,
+                    value: parseInt(item.occurrences),
+                    parent,
+                });
             }
-            for(let i = 0; i<research_area.length; i++){
-                const element = {
-                    id: research_area[i].research_units_tours,
-                    name : research_area[i].research_units_tours,
-                    value : parseInt(research_area[i].occurrences),
-                    parent : research_area[i].university_name
-                }
-                by_uni.push(element)
+        });
+
+        specific_research_units.forEach((item) => {
+            const id = item.specific_research_units_tours;
+            const parent = item.research_units_tours;
+            if (id && id !== parent && existingIds.has(parent)) {
+                existingIds.add(id);
+                by_uni.push({
+                    id,
+                    name: id,
+                    value: parseInt(item.occurrences),
+                    parent,
+                });
             }
-            for(let i = 0; i<specific_research_units.length; i++){
-                if(specific_research_units[i].specific_research_units_tours){
-                    const element = {
-                        id: specific_research_units[i].specific_research_units_tours,
-                        name : specific_research_units[i].specific_research_units_tours,
-                        value : parseInt(specific_research_units[i].occurrences),
-                        parent : specific_research_units[i].research_units_tours
-                    }
-                    by_uni.push(element)
-                }
-            }
+        });
             by_uni.sort((a, b) => {
                 if (a.name < b.name) return -1;
                 if (a.name > b.name) return 1;
