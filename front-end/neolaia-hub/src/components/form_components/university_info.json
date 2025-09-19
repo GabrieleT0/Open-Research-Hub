@@ -24,7 +24,8 @@
             "Bielefeld University",
             "University of Jaén",
             "University of Ostrava",
-            "Sumy State University"
+            "Sumy State University",
+            "Borys Grinchenko Kyiv University"
           ]
         },
         {
@@ -1459,6 +1460,232 @@
             "Methods for the measurement and interpretation of Self-Reported Outcomes",
             "Prediction and Causality",
             "Other or several"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Borys Grinchenko Kyiv University",
+          "visibleIf": "{university_name} = 'Borys Grinchenko Kyiv University'",
+          "title": "Select the first level structure (i.e. Faculty)",
+          "choices": [
+            "Faculty of Journalism",
+            "Faculty of Economics and Management",
+            "Faculty of Health, Physical Education and Sports",
+            "Faculty of Information Technologies and Mathematics",
+            "Faculty of Music Arts and Choreography",
+            "Faculty of Fine Arts and Design",
+            "Faculty of Pedagogical Education",
+            "Faculty of Psychology, Social Work  and Special Education",
+            "Faculty of Law and International Relations",
+            "Faculty of Romance and Germanic Philology",
+            "Faculty of Social Sciences and Humanities",
+            "Faculty of Oriental Languages",
+            "Faculty of Ukrainian Philology, Culture and Arts",
+            "Applied College Universum",
+            "Institute of In-Service Training"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Journalism",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Journalism'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Journalism and New Media",
+            "Department of Media Producing and Publishing",
+            "Department of International Journalism",
+            "Department of Advertising and Public Relations"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Economics and Management",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Economics and Management'",
+          "title": "Select your department",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Department of International Economics"
+            },
+            {
+              "value": "Item 2",
+              "text": "Department of Management"
+            },
+            {
+              "value": "Item 3",
+              "text": "Department of Finance"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Health, Physical Education and Sports",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Health, Physical Education and Sports'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Physical Education and Basic Military Training",
+            "Department of Physical Education and Sports Pedagogy",
+            "Department of Physical Therapy and Ergotherapy",
+            "Department of Sports and Fitness"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Information Technologies and Mathematics",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Information Technologies and Mathematics'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Information and Cyber Security named after Professor Volodymyr Buriachok",
+            "Department of Computer Science",
+            "Department of Mathematics and Physics"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Music Arts and Choreography",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Music Arts and Choreography'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Academic and Pop Vocal",
+            "Department of Instrumental and Performing Arts",
+            "Department of Musicology and Music Education",
+            "Department of Music and Performing Arts",
+            "Department of Choreography"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Fine Arts and Design",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Fine Arts and Design'",
+          "title": "Select your department",
+          "choices": [
+            {
+              "value": "Item 1",
+              "text": "Department of Decorative Arts and Restoration"
+            },
+            {
+              "value": "Item 2",
+              "text": "Department of Design"
+            },
+            {
+              "value": "Item 3",
+              "text": "Department of Fine Arts"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Pedagogical Education",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Pedagogical Education'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Preschool Education",
+            "Department of Foreign Languages and Teaching Methods",
+            "epartment of Educology, Psychological and Pedagogical Sciences",
+            "Department of Primary Education"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Psychology, Social Work  and Special Education",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Psychology, Social Work  and Special Education'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Personality Psychology and Social Practices",
+            "Department of Practical Psychology",
+            "Department of Social Pedagogy and Social Work ",
+            "Department of Special and Inclusive Education"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Law and International Relations",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Law and International Relations'",
+          "title": "Select your department\n",
+          "choices": [
+            "Department of Foreign Languages",
+            "Department of International Relations ",
+            "Department of International Law, European and Euro-Atlantic Integration",
+            "Department of Public Law",
+            "Department of Private Law"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Romance and Germanic Philology",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Romance and Germanic Philology'",
+          "title": "Select your department",
+          "choices": [
+            "Department of English Language and Communication",
+            "Department of Germanic Philology",
+            "Department of Linguistics and Translation",
+            "Department of Romance Philology"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Social Sciences and Humanities",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Social Sciences and Humanities'",
+          "title": "Select your department",
+          "choices": [
+            "Department of World History",
+            "Department of Ukrainian History",
+            "Department of Political Science and Sociology",
+            "Department of Philosophy and Religious Studies"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Oriental Languages",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Oriental Languages'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Japanese Language and Translation",
+            "Department of Chinese Language and Translation",
+            "Department of Oriental Culture and Literature"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Faculty of Ukrainian Philology, Culture and Arts",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Faculty of Ukrainian Philology, Culture and Arts'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Ukrainian Language",
+            "Department of Ukrainian Literature, Comparative Studies and Grinchenko Studies",
+            "Department of World Literature",
+            "Department of Information Communications"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Applied College Universum",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Applied College Universum'",
+          "title": "Select your department",
+          "choices": [
+            "Cyclic Commission on Publishing, Culture and Ukrainian Philology",
+            "Cyclic Commission on Economic and Mathematical Disciplines and Management",
+            "Cyclic Commission on Foreign Languages",
+            "Cyclic commission on music and choreography",
+            "Cyclic Commission on Fine Arts and Design",
+            "Cyclic Commission on Pedagogical Education",
+            "Cyclic Commission of Natural Sciences",
+            "Cyclic Commission of Social Disciplines and Law",
+            "Cycle Commission on Physical Education"
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Institute of In-Service Training",
+          "visibleIf": "{Borys Grinchenko Kyiv University} = 'Institute of In-Service Training'",
+          "title": "Select your department",
+          "choices": [
+            "Department of Preschool and Primary Education",
+            "Department of History and Civic Education",
+            "Department of Language and Literary Education",
+            "Department of Educational Leadership",
+            "Department of Natural Sciences and Mathematics Education and Technologies",
+            "Scientific Research Laboratory of Experimental Pedagogy and Pedagogical Innovations"
           ]
         }
       ]
