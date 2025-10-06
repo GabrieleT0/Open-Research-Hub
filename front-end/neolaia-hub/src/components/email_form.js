@@ -90,6 +90,7 @@ const EmailForm = ( {onNext, privacy_policy, accept_policy_message, policy_mess
                 <li>cnrs.fr</li>
                 <li>inserm.fr</li>
                 <li>sumdu.edu.ua</li>
+                <li>kubg.edu.ua</li>
                 </ul>
                 <br />
             </>
