@@ -1504,15 +1504,15 @@
           "title": "Select your department",
           "choices": [
             {
-              "value": "Item 1",
+              "value": "Department of International Economics",
               "text": "Department of International Economics"
             },
             {
-              "value": "Item 2",
+              "value": "Department of Management",
               "text": "Department of Management"
             },
             {
-              "value": "Item 3",
+              "value": "Department of Finance",
               "text": "Department of Finance"
             }
           ]
@@ -1560,15 +1560,15 @@
           "title": "Select your department",
           "choices": [
             {
-              "value": "Item 1",
+              "value": "Department of Decorative Arts and Restoration",
               "text": "Department of Decorative Arts and Restoration"
             },
             {
-              "value": "Item 2",
+              "value": "Department of Design",
               "text": "Department of Design"
             },
             {
-              "value": "Item 3",
+              "value": "Department of Fine Arts",
               "text": "Department of Fine Arts"
             }
           ]
