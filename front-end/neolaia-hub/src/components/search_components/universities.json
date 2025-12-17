@@ -9,7 +9,8 @@
       "Bielefeld University",
       "University of Jaén",
       "University of Ostrava",
-      "Sumy State University"
+      "Sumy State University",
+      "Borys Grinchenko Kyiv Metropolitan University"
     ],
     "University of Salerno" : [
       "Department of Chemistry and Biology \"Adolfo Zambelli\"/DCB",
@@ -21,7 +22,7 @@
       "Department of Industrial Engineering/DIIN",
       "Department of Mathematics/DIPMAT",
       "Department of Medicine, Surgery and Dentistry \"Scuola Medica Salernitana\"/DIPMED",
-      "Department of Business Sciences   Management & Innovation Systems/DISA MIS",
+      "Department of Business Sciences Management and Innovation Systems/DISA MIS",
       "Department of Cultural Heritage Sciences/DISPAC",
       "Department of Economics and Statistics/DISES",
       "Department of Legal Sciences (School of Law)",
@@ -127,5 +128,22 @@
       "Classical professional college of Sumy State University",
       "Konotop Industrial and Pedagogical College of Sumy State University",
       "Mechanical engineering college of Sumy State University"
+    ],
+    "Borys Grinchenko Kyiv Metropolitan University" : [
+      "Faculty of Journalism",
+      "Faculty of Economics and Management",
+      "Faculty of Health, Physical Education and Sports",
+      "Faculty of Information Technologies and Mathematics",
+      "Faculty of Music Arts and Choreography",
+      "Faculty of Fine Arts and Design",
+      "Faculty of Pedagogical Education",
+      "Faculty of Psychology, Social Work  and Special Education",
+      "Faculty of Law and International Relations",
+      "Faculty of Romance and Germanic Philology",
+      "Faculty of Social Sciences and Humanities",
+      "Faculty of Oriental Languages",
+      "Faculty of Ukrainian Philology, Culture and Arts",
+      "Applied College Universum",
+      "Institute of In-Service Training"
     ]
   }

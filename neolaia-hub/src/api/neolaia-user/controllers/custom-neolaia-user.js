@@ -5,7 +5,7 @@ module.exports = {
         try{
             const otp = randomBytes(24 / 2).toString("hex");
             const email = ctx.request.body.email
-            const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usv\.ro|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it)\b/;
+            const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usv\.ro|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it|osu\.eu|inrae\.fr|cnrs\.fr|inserm\.fr|sumdu\.edu\.ua|kubg\.edu\.ua)\b/;
             if(!regex.test(email))
                 return ctx.badRequest("The page address must come from one of NEOLAiA's partner university domains", {email : "The page address must come from one of NEOLAiA's partner university domains"})
             const currentTimeStamp = new Date().getTime().toString();
