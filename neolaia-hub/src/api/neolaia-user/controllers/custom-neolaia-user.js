@@ -91,18 +91,26 @@ module.exports = {
                 const user = entries[0]; 
                 
                 const submissions = await strapi.entityService.findMany("api::research-info-survey.research-info-survey", {
-                    fields: ['user_id', 'name', 'surname'],
+                    fields: ['user_id', 'name', 'surname', 'university_name', 'department', 'faculty', 'orcid_link', 'research_group_link', 'personal_page_link', 'research_units_tours', 'specific_research_units_tours'],
                     filters: {
                         user_id: user.id
                     },
                     limit: 1
                 });
-                
+                console.log(submissions)
                 if (submissions && submissions.length > 0){
                     return ctx.send({ 
                         user_id: user.id,
                         user_name: submissions[0].name, 
-                        user_surname: submissions[0].surname 
+                        user_surname: submissions[0].surname,
+                        university_name: submissions[0].university_name,
+                        department_name: submissions[0].department,
+                        faculty_name: submissions[0].faculty,
+                        orcid_link: submissions[0].orcid_link,
+                        research_group_link: submissions[0].research_group_link,
+                        personal_page_link: submissions[0].personal_page_link,
+                        research_units_tours: submissions[0].research_units_tours,
+                        specific_research_units_tours: submissions[0].specific_research_units_tours
                     });
                 } else {
                     return ctx.notFound('No submission info found for this user');
