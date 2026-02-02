@@ -1,6 +1,6 @@
 # Open Research Hub
 
-A hub to manage and browse research information. This monorepo contains:
+A hub to manage and browse research information. This repository contains:
 
 - **Backend** – Strapi v4 CMS/API: [neolaia-hub](neolaia-hub)
 - **Frontend** – React (Create React App): [front-end/neolaia-hub](front-end/neolaia-hub)
