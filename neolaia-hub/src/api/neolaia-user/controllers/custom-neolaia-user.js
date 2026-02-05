@@ -100,7 +100,7 @@ module.exports = {
                 console.log(submissions)
                 if (submissions && submissions.length > 0){
                     return ctx.send({ 
-                        user_id: user.id,
+                        user_id: submissions[0].id,
                         user_name: submissions[0].name, 
                         user_surname: submissions[0].surname,
                         university_name: submissions[0].university_name,
