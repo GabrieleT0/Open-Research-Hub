@@ -29,4 +29,17 @@ function proxySecretMatches(value) {
   return a.length === b.length && timingSafeEqual(a, b);
 }
 
-module.exports = { authMode, allowedEmail, proxySecretMatches };
+function allowedShibbolethIdentity(idp, email) {
+  if (typeof idp !== 'string' || !idp || idp !== idp.trim() || idp.includes(',') || !allowedEmail(email)) return false;
+  let mapping;
+  try {
+    mapping = JSON.parse(process.env.SHIBBOLETH_IDP_EMAIL_DOMAINS || '');
+  } catch (_) {
+    return false;
+  }
+  if (!mapping || typeof mapping !== 'object' || Array.isArray(mapping)) return false;
+  const domains = Object.prototype.hasOwnProperty.call(mapping, idp) ? mapping[idp] : null;
+  return Array.isArray(domains) && domains.includes(email.split('@')[1]);
+}
+
+module.exports = { authMode, allowedEmail, proxySecretMatches, allowedShibbolethIdentity };

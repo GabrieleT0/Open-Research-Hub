@@ -1,6 +1,6 @@
 const { randomBytes } = require("node:crypto");
 const jwt = require('jsonwebtoken');
-const { authMode, allowedEmail, proxySecretMatches } = require('../services/auth-config');
+const { authMode, allowedEmail, proxySecretMatches, allowedShibbolethIdentity } = require('../services/auth-config');
 
 module.exports = {
     async create(ctx, next){
@@ -92,6 +92,9 @@ module.exports = {
         if (!proxySecretMatches(ctx.get('X-Shibboleth-Proxy-Secret'))) return ctx.unauthorized();
         const email = allowedEmail(ctx.get('X-Shibboleth-Email'));
         if (!email) return ctx.forbidden('An institutional email address was not released by your identity provider.');
+        if (!allowedShibbolethIdentity(ctx.get('X-Shibboleth-IdP'), email)) {
+            return ctx.forbidden('The identity provider is not authorized for this email domain.');
+        }
 
         const returnUrl = process.env.SHIBBOLETH_RETURN_URL;
         if (!returnUrl) return ctx.internalServerError('SHIBBOLETH_RETURN_URL is not configured');
