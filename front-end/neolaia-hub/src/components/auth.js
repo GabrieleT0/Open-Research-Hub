@@ -8,9 +8,8 @@ import OTPForm from "./OTP_form";
 
 const Auth = ({privacy_message,accept_policy_message, privacy_policy}) => {
     const [email, setEmail] = useState("");
-    const [otp, setOTP] = useState("");
     const [error_message, setErrorMessage] = useState(null)
-    const { setToken } = useContext(AuthContext)
+    const { setToken, authMode, authError, loading, shibbolethLoginUrl } = useContext(AuthContext)
 
     const handle_email_submit = async (email) => {
         setEmail(email)
@@ -54,10 +53,31 @@ const Auth = ({privacy_message,accept_policy_message, privacy_policy}) => {
 
     return(
         <div>
-            {!email && <EmailForm onNext={handle_email_submit} privacy_policy={privacy_message} accept_policy_message={accept_policy_message} policy_message={privacy_policy}/>}
-            {email && <OTPForm onAuthenticate={handle_authentication} />}
+            {authError && <p role="alert">{authError}</p>}
+            {!loading && authMode === 'shibboleth' && <ShibbolethLogin loginUrl={shibbolethLoginUrl} privacy_message={privacy_message} accept_policy_message={accept_policy_message} privacy_policy={privacy_policy} />}
+            {!loading && authMode === 'otp' && !email && <EmailForm onNext={handle_email_submit} privacy_policy={privacy_message} accept_policy_message={accept_policy_message} policy_message={privacy_policy}/>}
+            {!loading && authMode === 'otp' && email && <OTPForm onAuthenticate={handle_authentication} />}
+            {error_message && <p role="alert">Authentication failed. Please try again.</p>}
         </div>
     )
 
+}
+function ShibbolethLogin({ loginUrl, privacy_message, accept_policy_message, privacy_policy }) {
+    const [openDataAccepted, setOpenDataAccepted] = useState(false);
+    const [privacyAccepted, setPrivacyAccepted] = useState(false);
+    const [showError, setShowError] = useState(false);
+    const login = (event) => {
+        event.preventDefault();
+        if (!openDataAccepted || !privacyAccepted) return setShowError(true);
+        window.location.assign(loginUrl);
+    };
+    return <form onSubmit={login}>
+        {privacy_message}
+        <label><input type="checkbox" checked={openDataAccepted} onChange={event => setOpenDataAccepted(event.target.checked)} />{accept_policy_message}</label>
+        <br />
+        <label><input type="checkbox" checked={privacyAccepted} onChange={event => setPrivacyAccepted(event.target.checked)} />{privacy_policy}</label>
+        {showError && <p role="alert">Please accept both policies to continue.</p>}
+        <button type="submit">Sign in with your university (eduGAIN)</button>
+    </form>;
 }
 export default Auth;

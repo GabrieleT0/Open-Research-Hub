@@ -1,19 +1,21 @@
 const { randomBytes } = require("node:crypto");
+const jwt = require('jsonwebtoken');
+const { authMode, allowedEmail, proxySecretMatches } = require('../services/auth-config');
 
 module.exports = {
     async create(ctx, next){
+        if (authMode() !== 'otp') return ctx.notFound();
         try{
             const otp = randomBytes(24 / 2).toString("hex");
-            const email = ctx.request.body.email
-            const regex = /\b[A-Za-z0-9._%+-]+@.*?(osu\.cz|usv\.ro|usm\.ro|unic\.ac\.cy|oru\.se|svako\.lt|ujaen\.es|univ-tours\.fr|uni-bielefeld\.de|unisa\.it|osu\.eu|inrae\.fr|cnrs\.fr|inserm\.fr|sumdu\.edu\.ua|kubg\.edu\.ua)\b/;
-            if(!regex.test(email))
+            const email = allowedEmail(ctx.request.body?.email);
+            if(!email)
                 return ctx.badRequest("The page address must come from one of NEOLAiA's partner university domains", {email : "The page address must come from one of NEOLAiA's partner university domains"})
             const currentTimeStamp = new Date().getTime().toString();
             let entry;
             entry = await strapi.db.query('api::neolaia-user.neolaia-user').findOne({
                 select: ['id', 'email'],
                 where: {
-                    email: email
+                    email: { $eqi: email }
                 }
             })
             if (entry){
@@ -42,15 +44,15 @@ module.exports = {
         }
     },
     async active(ctx, next){
-        const jwt = require('jsonwebtoken');
+        if (authMode() !== 'otp') return ctx.notFound();
         try{
-            const email = ctx.request.body.email
+            const email = allowedEmail(ctx.request.body?.email)
             const otp = ctx.request.body.otp
             let entry
             entry = await strapi.db.query('api::neolaia-user.neolaia-user').findOne({
                 select: ['id', 'email'],
                 where:{
-                    email : email,
+                    email: { $eqi: email },
                     OTP : otp,
                     otp_active: true
                 }
@@ -66,13 +68,62 @@ module.exports = {
                 return ctx.response.unauthorized('You are not authorized to access this resource, you must authenticate yourself')
             }
             
-            const token = jwt.sign({user_id: entry.id, email: entry.email}, process.env.JWT_SECRET_CUSTOM_AUTH, {expiresIn: process.env.JWT_EXPIRES_CUSTOM_AUTH_IN})
+            const token = jwt.sign({user_id: entry.id, email: entry.email, auth_source: 'otp'}, process.env.JWT_SECRET_CUSTOM_AUTH, {expiresIn: process.env.JWT_EXPIRES_CUSTOM_AUTH_IN})
             ctx.send({ token })
         
 
 
         } catch (error){
             ctx.response.internalServerError(error)
+        }
+    },
+    async authConfig(ctx) {
+        ctx.set('Cache-Control', 'no-store');
+        ctx.send({
+            mode: authMode(),
+            shibbolethLoginUrl: process.env.SHIBBOLETH_LOGIN_URL || null,
+        });
+    },
+    async shibbolethLogin(ctx) {
+        if (authMode() !== 'shibboleth') return ctx.notFound();
+        ctx.set('Cache-Control', 'no-store');
+        // Apache must remove incoming identity headers and set these only after a
+        // successful Shibboleth session. The shared secret protects direct API access.
+        if (!proxySecretMatches(ctx.get('X-Shibboleth-Proxy-Secret'))) return ctx.unauthorized();
+        const email = allowedEmail(ctx.get('X-Shibboleth-Email'));
+        if (!email) return ctx.forbidden('An institutional email address was not released by your identity provider.');
+
+        const returnUrl = process.env.SHIBBOLETH_RETURN_URL;
+        if (!returnUrl) return ctx.internalServerError('SHIBBOLETH_RETURN_URL is not configured');
+        let target;
+        try {
+            target = new URL(returnUrl);
+            if (target.protocol !== 'https:' && !(process.env.NODE_ENV !== 'production' && target.hostname === 'localhost')) {
+                throw new Error('Invalid return URL');
+            }
+        } catch (_) {
+            return ctx.internalServerError('SHIBBOLETH_RETURN_URL must be an absolute HTTPS URL');
+        }
+
+        try {
+            let user = await strapi.db.query('api::neolaia-user.neolaia-user').findOne({
+                select: ['id', 'email'], where: { email: { $eqi: email } },
+            });
+            if (!user) {
+                user = await strapi.entityService.create('api::neolaia-user.neolaia-user', {
+                    data: { email, first_access: true, otp_active: false },
+                });
+            }
+            const token = jwt.sign(
+                { user_id: user.id, email: user.email, auth_source: 'shibboleth' },
+                process.env.JWT_SECRET_CUSTOM_AUTH,
+                { expiresIn: process.env.JWT_EXPIRES_CUSTOM_AUTH_IN },
+            );
+            target.hash = `shibboleth_token=${encodeURIComponent(token)}`;
+            ctx.redirect(target.toString());
+        } catch (error) {
+            strapi.log.error('Shibboleth login failed', error);
+            return ctx.internalServerError('Could not complete login');
         }
     },
     async find(ctx, next){
