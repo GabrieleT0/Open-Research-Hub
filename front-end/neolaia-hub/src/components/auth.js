@@ -71,13 +71,14 @@ function ShibbolethLogin({ loginUrl, privacy_message, accept_policy_message, pri
         if (!openDataAccepted || !privacyAccepted) return setShowError(true);
         window.location.assign(loginUrl);
     };
-    return <form onSubmit={login}>
+    return <form id="shibboleth-form" onSubmit={login}>
         {privacy_message}
-        <label><input type="checkbox" checked={openDataAccepted} onChange={event => setOpenDataAccepted(event.target.checked)} />{accept_policy_message}</label>
-        <br />
-        <label><input type="checkbox" checked={privacyAccepted} onChange={event => setPrivacyAccepted(event.target.checked)} />{privacy_policy}</label>
+        <div className="shibboleth-policy-options">
+            <label><input type="checkbox" checked={openDataAccepted} onChange={event => setOpenDataAccepted(event.target.checked)} />{accept_policy_message}</label>
+            <label><input type="checkbox" checked={privacyAccepted} onChange={event => setPrivacyAccepted(event.target.checked)} />{privacy_policy}</label>
+        </div>
         {showError && <p role="alert">Please accept both policies to continue.</p>}
-        <button type="submit">Sign in with your university (eduGAIN)</button>
+        <button className="shibboleth-login-button" type="submit">Sign in with your university (eduGAIN)</button>
     </form>;
 }
 export default Auth;
