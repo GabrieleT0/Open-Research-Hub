@@ -3,7 +3,7 @@ import React from 'react';
 const PrivacyPolicy = () => {
     return (
         <>
-<body>
+<main className="privacy-policy-page">
     <header style={{textAlign: "center"}}>
         <h1>University of Salerno</h1>
         <p>Via Giovanni Paolo II, 132 - 84084 Fisciano (SA)</p>
@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
         <p>PEC: <a href="mailto:ammicent@pec.unisa.it">ammicent@pec.unisa.it</a></p>
     </header>
 
-    <div class="container">
+    <div className="container privacy-policy-content">
         <h2>Open Research Hub - NEOLAiA</h2>
         <h3>Information on Data Processing</h3>
         <p>The legislation and the regulations on the protection of personal data require us to inform you about the
@@ -139,7 +139,7 @@ const PrivacyPolicy = () => {
             </p>
         </section>
 
-        <section class="cookie-policy">
+        <section className="cookie-policy">
             <h3>7. Cookies Policy</h3>
             <p>
                 Information that may relate to the user, their preferences or their Internet access device (e.g. computer,
@@ -188,9 +188,9 @@ const PrivacyPolicy = () => {
     </div>
 
     <footer style={{textAlign: "center"}}>
-        <p>&copy; 2024 University of Salerno</p>
+        <p>&copy; 2026 University of Salerno</p>
     </footer>
-</body>
+</main>
 </>
     );
 }
