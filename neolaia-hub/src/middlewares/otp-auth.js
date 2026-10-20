@@ -1,4 +1,5 @@
 module.exports = (config, { strapi }) => {
+    const { authMode } = require('../api/neolaia-user/services/auth-config');
     return async (ctx, next) =>{
         const jwt = require('jsonwebtoken');
         const token = ctx.request.body.token
@@ -10,6 +11,8 @@ module.exports = (config, { strapi }) => {
         if (!token) return ctx.unauthorized("Access denied.");
             try {
                 const decoded = jwt.verify(token, process.env.JWT_SECRET_CUSTOM_AUTH,);
+                const source = decoded.auth_source || 'otp';
+                if (source !== authMode()) return ctx.unauthorized('This login method is disabled.');
                 ctx.request.body.data.email = decoded.email;
                 ctx.request.body.data.user_id= decoded.user_id;
                 return next();

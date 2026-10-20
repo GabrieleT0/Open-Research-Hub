@@ -7,7 +7,171 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.privacy-policy-page {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  color: #333;
+  background: #fff;
+}
+
+.privacy-policy-page > header,
+.privacy-policy-page > footer {
+  max-width: 960px;
+  margin: 0 auto 2rem;
+}
+
+.privacy-policy-content {
+  max-width: 960px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  line-height: 1.65;
+}
+
+.privacy-policy-content section {
+  margin-top: 1.75rem;
+}
+
+.privacy-policy-content h2,
+.privacy-policy-content h3 {
+  color: #174b70;
+}
+
+.privacy-policy-content li {
+  margin-bottom: .4rem;
+}
+
+@media (max-width: 576px) {
+  .privacy-policy-page { padding: 1.25rem .5rem; }
+  .privacy-policy-content { padding: 1.25rem; }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.dashboard-about-link {
+  display: inline-block;
+  margin: .25rem 0 1rem;
+  color: #174b70;
+}
+
+.about-page {
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  color: #213547;
+  background: #fafafa;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-header {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
+  text-align: center;
+}
+
+.about-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: .35rem .75rem;
+  border-radius: 6px;
+  color: #6759b9;
+  background: #f0f0ff;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.about-header h1 {
+  margin: 0 0 .5rem;
+  color: #213547;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.about-header p {
+  margin: 0;
+  color: #6c757d;
+  font-size: .95rem;
+}
+
+.about-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+.about-section h2 {
+  margin: 0 0 1rem;
+  color: #213547;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.about-section p,
+.about-list {
+  margin: 0;
+  color: #4a5568;
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+.about-list {
+  padding-left: 1.25rem;
+}
+
+.about-list li + li {
+  margin-top: .35rem;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.about-page a {
+  color: #6759b9;
+}
+
+.about-page a:hover {
+  color: #4d419b;
+}
+
+.about-page a:focus-visible {
+  outline: 2px solid #6759b9;
+  outline-offset: 3px;
+}
+
+.about-email,
+.about-privacy-link {
+  display: inline-block;
+  margin-top: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.about-email {
+  padding: .75rem 1rem;
+  border-radius: 8px;
+  background: #f0f0ff;
+  font-size: .9rem;
+}
+
+.about-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .about-page { padding: 1.5rem .75rem 3rem; }
+  .about-header h1 { font-size: 1.75rem; }
+  .about-section { padding: 1.25rem; }
 }

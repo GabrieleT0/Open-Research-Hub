@@ -42,6 +42,51 @@ text-align: center;
 margin-top: 50px;
 }
 
+#shibboleth-form {
+  margin-top: 50px;
+}
+
+.shibboleth-policy-options {
+  margin: 0 20px;
+  text-align: left;
+}
+
+.shibboleth-policy-options label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.shibboleth-policy-options input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.shibboleth-login-button {
+  display: block;
+  max-width: calc(100% - 40px);
+  margin: 20px auto 0;
+  padding: .85em 1.5em;
+  border: .2em solid #5389f7;
+  border-radius: 2em;
+  background: #fff;
+  color: #5389f7;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.shibboleth-login-button:hover,
+.shibboleth-login-button:focus-visible {
+  background: #5389f7;
+  color: #fff;
+}
+
+.shibboleth-login-button:focus-visible {
+  outline: 2px solid #1c4ca8;
+  outline-offset: 3px;
+}
+
 #input-mail{
   appearance: none;
 	border: none;

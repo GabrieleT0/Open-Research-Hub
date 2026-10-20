@@ -29,6 +29,7 @@ function ResearcherDash(){
                         </h5>
                         <Button as={Link} to="/participate" id='start-btn'>Participate</Button>
                         <Button variant='secondary' as={Link} to="/search-researchers" id='search-btn'>Search</Button>
+                        <div><Link className="dashboard-about-link" to="/about">About the Open Research Hub</Link></div>
                     </Col>
                 </Row>
                 <Row>
